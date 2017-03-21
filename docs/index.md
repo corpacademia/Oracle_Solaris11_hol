@@ -15,8 +15,8 @@ based on real life use cases. We will:
     together: [IPS Lab](ips/ips.md)
 -   use new networking commands, configure virtual network interfaces: [Networking Lab](net/net.md)
 -   create a couple of Solaris virtual environments (zones); install some
-    applications into them; clone a zone; use Resource Management with the zones: [Virtualization Lab](virt/virt.md)
--   learn how to install systems and zones with Automated Installer: [AI Lab](ai/ai.md)
+    applications into them; clone a zone; use Resource Management with the zones: [Virtualization Lab](virt/virt_pre.md)
+-   learn how to install systems and zones with Automated Installer: [AI Lab](ai/ai_intro.md)
 -   compare two virtualization options available in Oracle Solaris: non-global
     zones and kernel zones: [Kernel Zones Lab](kz/kz.md) 
 

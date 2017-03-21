@@ -1,7 +1,7 @@
 Boot Environments Intro
 -----------------------
 
-Boot Environments feature helps you to have several separate environments with different Solaris versions (e.g. 11.2.7, 11.3.12. etc.), different package versions, different system configurations. Typically they are used to update Solaris systems (most of the work is done by IPS behind the scenes, but you can learn the mechanics of the process in the [IPS Lab](ips/ips.md).
+Boot Environments feature helps you to have several separate environments with different Solaris versions (e.g. 11.2.7, 11.3.12. etc.), different package versions, different system configurations. Typically they are used to update Solaris systems (most of the work is done by IPS behind the scenes, but you can learn the mechanics of the process in the [IPS Lab](/ips/ips.md).
 
 Boot environments use ZFS snapshot/clone technology so they can be created quickly and they don't consume storage space until you make changes. You can have as many Boot Environments as you want and keep different system configurations in them. By default, every time you update Solaris OS, a new boot environment is created (you can specify its name).  
 
