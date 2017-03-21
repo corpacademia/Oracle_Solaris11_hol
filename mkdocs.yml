@@ -1,0 +1,76 @@
+site_name: Oracle Solaris 11 Hands-on Labs
+site_author: Pavel Anni <pavel.anni@oracle.com>
+copyright: Oracle Corp., 2011-2017
+
+theme: 'material'
+theme_dir: 'theme'
+
+
+extra:
+  palette:
+    primary: 'red'
+    accent: 'indigo'
+
+markdown_extensions:
+  - admonition
+  - codehilite(guess_lang=false)
+  - pymdownx.arithmatex
+  - pymdownx.betterem(smart_enable=all)
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist(custom_checkbox=true)
+  - pymdownx.tilde
+
+pages:
+  - 'Introduction': 'index.md'
+  - 'ZFS':
+    - 'ZFS Intro': 'zfs/zfs.md'
+    - 'ZFS Pools': 'zfs/zfs_pools.md'
+    - 'ZFS File Systems': 'zfs/zfs_fs.md'
+    - 'ZFS Compression': 'zfs/zfs_compress.md'
+    - 'ZFS Deduplication:': 'zfs/zfs_dedup.md'
+    - 'ZFS Snapshops': 'zfs/zfs_snap.md'
+    - 'ZFS Clones': 'zfs/zfs_clones.md'
+    - 'ZFS Rights Delegation': 'zfs/zfs_rights.md'
+    - 'ZFS Backup and Restore': 'zfs/zfs_backup.md'
+    - 'ZFS Free Space': 'zfs/zfs_free.md'
+    - 'ZFS Reservations': 'zfs/zfs_reservations.md'
+    - 'ZFS Shadow Migration': 'zfs/zfs_shadow.md'
+    - 'Lab Cleanup': 'zfs/zfs_cleanup.md'
+  - 'Boot Environments': 'be/be.md'
+  - 'Image Packaging System':
+    - 'IPS Intro': 'ips/ips.md'
+    - 'IPS Lab Preparation': 'ips/ips_repo.md'
+    - 'IPS Package Installation': 'ips/ips_install.md'
+    - 'IPS Package Verification': 'ips/ips_verify.md'
+    - 'IPS and Boot Environments': 'ips/ips_be.md'
+    - 'IPS for Developers': 'ips/ips_dev.md'
+  - 'Networking': 'net/net.md'
+  - 'Virtualization': 
+    - 'Virtualization Lab Prerequisites': 'virt/virt_pre.md'
+    - 'Zone Installation': 'virt/zone_install.md'
+    - 'Inside the Zone': 'virt/zone_inside.md'
+    - 'Zone Cloning': 'virt/zone_cloning.md'
+    - 'Zone Monitoring': 'virt/zone_monitoring.md'
+    - 'Zone Resource Management': 'virt/zone_resource.md'
+  - 'Automated Installer':
+    - 'Automated Installer Intro': 'ai/ai_intro.md'
+    - 'Simple Installation': 'ai/ai_simple.md'
+    - 'Another Version of Oracle Solaris': 'ai/ai_another_ver.md'
+    - 'Different Set of Packages': 'ai/ai_packages.md'
+    - 'System Configuration Profiles': 'ai/ai_profiles.md'
+    - 'Zone Installation with AI': 'ai/ai_zones.md'
+    - 'Different OS Versions on Clients': 'ai/ai_os_clients.md'
+    - 'Installing from Unified Archives': 'ai/ai_uar.md'
+    - 'AI Lab Summary': 'ai/ai_summary.md'
+  - 'Kernel Zones': 
+    - 'Kernel Zones Intro': 'kz/kz.md'
+    - 'Basic Configuration and Installation': 'kz/kz_basic.md'
+    - 'Solaris Zones Inside and Outside': 'kz/inside_outside.md'
+    - 'Kernel Zones Suspend and Resume': 'kz/kz_suspend.md'
+    - 'Kernel Zone Cloning': 'kz/kz_clone.md'
