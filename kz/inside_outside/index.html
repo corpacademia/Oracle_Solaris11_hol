@@ -1,0 +1,1234 @@
+
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Pavel Anni <pavel.anni@oracle.com>">
+      
+      
+        <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      
+      <meta name="generator" content="mkdocs-0.16.2, mkdocs-material-1.4.1">
+    
+    
+      
+        <title>Solaris Zones Inside and Outside - Oracle Solaris 11 Hands-on Labs</title>
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr-56ade86843.js"></script>
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application-76741b64bc.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-66fa0d9bba.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="red" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <a href="../.." title="Oracle Solaris 11 Hands-on Labs" class="md-icon md-icon--home md-header-nav__button">
+          </a>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  Kernel Zones
+                </span>
+              
+            
+            Solaris Zones Inside and Outside
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search">
+  <div class="md-search__overlay"></div>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <div class="md-header-nav__source">
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    
+      <i class="md-icon md-icon--home md-nav__button"></i>
+    
+    Oracle Solaris 11 Hands-on Labs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      ZFS
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        ZFS
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs/" title="ZFS Intro" class="md-nav__link">
+      ZFS Intro
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_pools/" title="ZFS Pools" class="md-nav__link">
+      ZFS Pools
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_fs/" title="ZFS File Systems" class="md-nav__link">
+      ZFS File Systems
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_compress/" title="ZFS Compression" class="md-nav__link">
+      ZFS Compression
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_dedup/" title="ZFS Deduplication:" class="md-nav__link">
+      ZFS Deduplication:
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_snap/" title="ZFS Snapshops" class="md-nav__link">
+      ZFS Snapshops
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_clones/" title="ZFS Clones" class="md-nav__link">
+      ZFS Clones
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_rights/" title="ZFS Rights Delegation" class="md-nav__link">
+      ZFS Rights Delegation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_backup/" title="ZFS Backup and Restore" class="md-nav__link">
+      ZFS Backup and Restore
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_free/" title="ZFS Free Space" class="md-nav__link">
+      ZFS Free Space
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_reservations/" title="ZFS Reservations" class="md-nav__link">
+      ZFS Reservations
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_shadow/" title="ZFS Shadow Migration" class="md-nav__link">
+      ZFS Shadow Migration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_cleanup/" title="Lab Cleanup" class="md-nav__link">
+      Lab Cleanup
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../be/be/" title="Boot Environments" class="md-nav__link">
+      Boot Environments
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Image Packaging System
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Image Packaging System
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ips/ips/" title="IPS Intro" class="md-nav__link">
+      IPS Intro
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ips/ips_repo/" title="IPS Lab Preparation" class="md-nav__link">
+      IPS Lab Preparation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ips/ips_install/" title="IPS Package Installation" class="md-nav__link">
+      IPS Package Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ips/ips_verify/" title="IPS Package Verification" class="md-nav__link">
+      IPS Package Verification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ips/ips_be/" title="IPS and Boot Environments" class="md-nav__link">
+      IPS and Boot Environments
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ips/ips_dev/" title="IPS for Developers" class="md-nav__link">
+      IPS for Developers
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../net/net/" title="Networking" class="md-nav__link">
+      Networking
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Virtualization
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Virtualization
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../virt/virt_pre/" title="Virtualization Lab Prerequisites" class="md-nav__link">
+      Virtualization Lab Prerequisites
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../virt/zone_install/" title="Zone Installation" class="md-nav__link">
+      Zone Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../virt/zone_inside/" title="Inside the Zone" class="md-nav__link">
+      Inside the Zone
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../virt/zone_cloning/" title="Zone Cloning" class="md-nav__link">
+      Zone Cloning
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../virt/zone_monitoring/" title="Zone Monitoring" class="md-nav__link">
+      Zone Monitoring
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../virt/zone_resource/" title="Zone Resource Management" class="md-nav__link">
+      Zone Resource Management
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Automated Installer
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Automated Installer
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ai_intro/" title="Automated Installer Intro" class="md-nav__link">
+      Automated Installer Intro
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ai_simple/" title="Simple Installation" class="md-nav__link">
+      Simple Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ai_another_ver/" title="Another Version of Oracle Solaris" class="md-nav__link">
+      Another Version of Oracle Solaris
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ai_packages/" title="Different Set of Packages" class="md-nav__link">
+      Different Set of Packages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ai_profiles/" title="System Configuration Profiles" class="md-nav__link">
+      System Configuration Profiles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ai_zones/" title="Zone Installation with AI" class="md-nav__link">
+      Zone Installation with AI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ai_os_clients/" title="Different OS Versions on Clients" class="md-nav__link">
+      Different OS Versions on Clients
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ai_uar/" title="Installing from Unified Archives" class="md-nav__link">
+      Installing from Unified Archives
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ai_summary/" title="AI Lab Summary" class="md-nav__link">
+      AI Lab Summary
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" checked>
+    
+    <label class="md-nav__link" for="nav-8">
+      Kernel Zones
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Kernel Zones
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kz/" title="Kernel Zones Intro" class="md-nav__link">
+      Kernel Zones Intro
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kz_basic/" title="Basic Configuration and Installation" class="md-nav__link">
+      Basic Configuration and Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Solaris Zones Inside and Outside
+      </label>
+    
+    <a href="./" title="Solaris Zones Inside and Outside" class="md-nav__link md-nav__link--active">
+      Solaris Zones Inside and Outside
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#processes" title="Processes" class="md-nav__link">
+    Processes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#processors-and-memory" title="Processors and Memory" class="md-nav__link">
+    Processors and Memory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#virtualization-support" title="Virtualization support" class="md-nav__link">
+    Virtualization support
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#packages" title="Packages" class="md-nav__link">
+    Packages
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kz_suspend/" title="Kernel Zones Suspend and Resume" class="md-nav__link">
+      Kernel Zones Suspend and Resume
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kz_clone/" title="Kernel Zone Cloning" class="md-nav__link">
+      Kernel Zone Cloning
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#processes" title="Processes" class="md-nav__link">
+    Processes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#processors-and-memory" title="Processors and Memory" class="md-nav__link">
+    Processors and Memory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#virtualization-support" title="Virtualization support" class="md-nav__link">
+    Virtualization support
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#packages" title="Packages" class="md-nav__link">
+    Packages
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Solaris Zones Inside and Outside</h1>
+                
+                <p>Now as we have installed and configured our zones, let's login into both
+and see how they look from inside. Remember: in the listings below the
+kernel zone's hostname is <code>kzone1</code>, non-global zone's one is
+<code>zone1</code>.</p>
+<h3 id="processes">Processes</h3>
+<p>We start with some basic process-related commands. For example, how many
+processes are running just after the zone is booted?</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@kzone1:~#</span> ps -ef <span class="p">|</span> wc -l
+<span class="go">      56</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="gp">root@zone1:~#</span> ps -ef <span class="p">|</span> wc -l
+<span class="go">      36</span>
+</pre></div>
+
+
+<p>You see, there some extra processes running in the kernel zone. Let's
+sort them by PID and look at the first 20 of them:</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@kzone1:~#</span> ps -ef <span class="p">|</span> sort -k <span class="m">2</span> <span class="p">|</span> head -20
+<span class="go">    root     0     0   0 15:16:13 ?           0:00 sched</span>
+<span class="go">    root     1     0   0 15:16:13 ?           0:00 /usr/sbin/init</span>
+<span class="go">    root     2     0   0 15:16:13 ?           0:00 pageout</span>
+<span class="go">    root     3     0   0 15:16:13 ?           0:01 fsflush</span>
+<span class="go">    root     5     0   0 15:16:11 ?           0:03 zpool-rpool</span>
+<span class="go">    root     6     0   0 15:16:13 ?           0:00 kmem_task</span>
+<span class="go">    root     7     0   0 15:16:13 ?           0:00 intrd</span>
+<span class="go">    root     8     0   0 15:16:13 ?           0:00 vmtasks</span>
+<span class="go">    root     9     0   0 15:16:13 ?           0:00 postwaittq</span>
+<span class="go">    root    13     1   0 15:16:16 ?           0:10 /lib/svc/bin/svc.startd</span>
+<span class="go">    root    15     1   0 15:16:16 ?           2:03 /lib/svc/bin/svc.configd</span>
+<span class="go">  netcfg    50     1   0 15:17:45 ?           0:00 /lib/inet/netcfgd</span>
+<span class="go">   dladm    65     1   0 15:17:54 ?           0:00 /usr/sbin/dlmgmtd</span>
+<span class="go">  netadm    84     1   0 15:18:06 ?           0:00 /lib/inet/ipmgmtd</span>
+<span class="go">    root    97     1   0 15:18:08 ?           0:00 /lib/inet/in.mpathd</span>
+<span class="go">    root   122     1   0 15:18:12 ?           0:00 /usr/lib/pfexecd</span>
+<span class="go">    root   165     1   0 15:18:25 ?           0:00 /usr/lib/sysevent/syseventd</span>
+<span class="go">  daemon   202     1   0 15:18:26 ?           0:00 /usr/lib/utmpd</span>
+<span class="go">    root   217     1   0 15:18:27 ?           0:00 /usr/lib/zones/zonestatd</span>
+<span class="go">    root   221     1   0 15:18:27 ?           0:00 /usr/lib/rad/rad -sp</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="gp">root@zone1:~#</span> ps -ef <span class="p">|</span> sort -k <span class="m">2</span> <span class="p">|</span> head -20
+<span class="go">     UID   PID  PPID   C    STIME TTY         TIME CMD</span>
+<span class="go">    root 21253 21253   0 14:28:07 ?           0:00 zsched</span>
+<span class="go">    root 21971 21253   0 14:28:16 ?           0:00 /usr/sbin/init</span>
+<span class="go">    root 22151 21253   0 14:28:16 ?           0:04 /lib/svc/bin/svc.startd</span>
+<span class="go">    root 22153 21253   0 14:28:16 ?           1:06 /lib/svc/bin/svc.configd</span>
+<span class="go">  netcfg 22186 21253   0 14:29:12 ?           0:00 /lib/inet/netcfgd</span>
+<span class="go">  daemon 22229 21253   0 14:29:15 ?           0:00 /lib/crypto/kcfd</span>
+<span class="go">    root 22236 21253   0 14:29:16 ?           0:00 /usr/lib/pfexecd</span>
+<span class="go">  netadm 22252 21253   0 14:29:17 ?           0:00 /lib/inet/ipmgmtd</span>
+<span class="go">    root 22266 21253   0 14:29:17 ?           0:00 /lib/inet/in.mpathd</span>
+<span class="go">  daemon 22272 21253   0 14:29:18 ?           0:00 /usr/lib/utmpd</span>
+<span class="go">    root 22287 21253   0 14:29:18 ?           0:00 /usr/lib/rad/rad -sp</span>
+<span class="go">    root 22333 21253   0 14:29:18 ?           0:00 /usr/lib/dbus-daemon --system</span>
+<span class="go">  netadm 22771 21253   0 14:30:43 ?           0:00 /lib/inet/nwamd</span>
+<span class="go">    root 22892 21253   0 14:30:46 ?           0:00 /usr/lib/zones/zoneproxy-client -s localhost:1008</span>
+<span class="go">    root 22899 21253   0 14:30:47 ?           0:00 /usr/sbin/nscd</span>
+<span class="go">    root 22955 21253   0 14:30:49 ?           0:00 /usr/sbin/cron</span>
+<span class="go">  daemon 23010 21253   0 14:30:51 ?           0:00 /usr/sbin/rpcbind</span>
+<span class="go">    root 23040 21253   0 14:30:51 ?           0:00 /usr/lib/inet/in.ndpd</span>
+<span class="go">    root 23048 21253   0 14:30:52 ?           0:00 /usr/lib/autofs/automountd</span>
+</pre></div>
+
+
+<p>Now you see the big difference between kernel zones and non-global
+zones. In non-global zones all the processes are part of the global
+zone's process space, so their PIDs start with some big number. In
+kernel zones they start with <code>0</code> and the list is not much different from
+the process list in the global zone.</p>
+<p>Now let's look at them from the global zone's perspective. Use the <code>-Z</code>
+switch for the <code>ps</code> command to see zone's names next to the processes.</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solarislab:~#</span> ps -efZ
+<span class="go">    ZONE      UID   PID  PPID   C    STIME TTY         TIME CMD</span>
+<span class="go">  global     root     0     0   0   Jul 29 ?           0:10 sched</span>
+<span class="go">  global     root     5     0   0   Jul 29 ?           7:26 zpool-rpool</span>
+<span class="go">  global     root     6     0   0   Jul 29 ?           0:31 kmem_task</span>
+<span class="go">  global     root     1     0   0   Jul 29 ?           0:01 /usr/sbin/init</span>
+<span class="go">  global     root     2     0   0   Jul 29 ?           0:00 pageout</span>
+<span class="go">  global     root     3     0   0   Jul 29 ?          11:32 fsflush</span>
+<span class="go">  global     root     7     0   0   Jul 29 ?           0:12 intrd</span>
+<span class="go">  global     root     8     0   0   Jul 29 ?           1:02 vmtasks</span>
+<span class="go">. . . (skipped) . . .</span>
+<span class="go">   zone1     root 21253     1   0 12:28:07 ?           0:00 zsched</span>
+<span class="go">  global     root  1214     1   0   Jul 29 ?           0:03 /usr/lib/ep/eptelemon</span>
+<span class="go">  global     root  1116     1   0   Jul 29 ?           0:21 /usr/lib/ep/epdetector dcdc cpu0</span>
+<span class="go">  kzone1     root 19817     1   0 11:55:11 ?           0:00 zsched</span>
+<span class="go">. . . (skipped) . . .</span>
+<span class="go">  kzone1     root 19995 19817   0 11:55:12 ?           6:23 /usr/lib/kzhost</span>
+<span class="go">  global  pkg5srv 20737     1   0 12:19:48 ?           0:16 /usr/apache2/2.2/bin/htcacheclean -d20160 -i -l 2048M -n -p /var/cache/pkg/sysr</span>
+<span class="go">  global  pkg5srv 20742 20739   0 12:19:49 ?           0:21 /usr/apache2/2.2/bin/64/httpd.worker -f /system/volatile/pkg/sysrepo/sysrepo_ht</span>
+<span class="go">  global  pkg5srv 20743 20739   0 12:19:49 ?           0:22 /usr/apache2/2.2/bin/64/httpd.worker -f /system/volatile/pkg/sysrepo/sysrepo_ht</span>
+<span class="go">   zone1     root 22151     1   0 12:28:16 ?           0:04 /lib/svc/bin/svc.startd</span>
+<span class="go">   zone1   netcfg 22186     1   0 12:29:12 ?           0:00 /lib/inet/netcfgd</span>
+<span class="go">  global  pkg5srv 20746     1   0 12:19:50 ?           0:00 /usr/lib/zones/zoneproxyd</span>
+<span class="go">   zone1     root 22153     1   0 12:28:16 ?           1:06 /lib/svc/bin/svc.configd</span>
+<span class="go">  global     root 21061     1   0 12:28:04 ?           0:01 zoneadmd -z zone1</span>
+<span class="go">   zone1     root 21971 21253   0 12:28:16 ?           0:00 /usr/sbin/init</span>
+<span class="go">   zone1     root 22266     1   0 12:29:17 ?           0:00 /lib/inet/in.mpathd</span>
+<span class="go">. . . (skipped) . . .</span>
+<span class="go">  global     root 23168 14852   0 12:32:01 pts/2       0:00 ps -efZ</span>
+</pre></div>
+
+
+<p>Now this gets interesting! We see a lot of processes in <code>zone1</code>, and (no
+surprise here) their PIDs are all the same that we just saw from inside
+the zone. As for <code>kzone1</code>, we see only 2 processes. Just to check, let's
+use <code>-z zonename</code> parameter:</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solarislab:~#</span> ps -f -Z -z kzone1
+<span class="go">    ZONE      UID   PID  PPID   C    STIME TTY         TIME CMD</span>
+<span class="go">  kzone1     root 19817     1   0 11:55:11 ?           0:00 zsched</span>
+<span class="go">  kzone1     root 19995 19817   0 11:55:12 ?           6:28 /usr/lib/kzhost</span>
+</pre></div>
+
+
+<p>That's right! Just two <code>kzone1</code>'s processes are visible from the global
+zone. Actually, kzhost is just a big process that keeps all the kernel
+zone's processes inside. How big is is? Yes, you guessed it right
+again&mdash;it takes the amount of memory that is configured for <code>kzone1</code>.
+You can check it with the following <code>ps</code> command:</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solarislab:~#</span> ps -o pid,vsz,rss,comm -z kzone1
+<span class="go">  PID  VSZ  RSS COMMAND</span>
+<span class="go">19817    0    0 zsched</span>
+<span class="go">19995 2120528 2119512 /usr/lib/kzhost</span>
+</pre></div>
+
+
+<p>The bottom line for these experiments:</p>
+<ul>
+<li>non-global zone's processes are visible from the global zone and
+    belong to its <em>process space</em></li>
+<li>kernel zone's processes are visible only inside the zone and they
+    have <em>their own</em> process space</li>
+</ul>
+<p>When choosing between non-global zones and kernel zones, please keep in
+mind this major difference.</p>
+<h3 id="processors-and-memory">Processors and Memory</h3>
+<p>Let's move on and figure out what resources are available in the zones.
+What is the output of <code>psrinfo(1M)</code>?</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@kzone1:~#</span> psrinfo
+<span class="go">0       on-line   since 06/15/2015 15:16:12</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="gp">root@zone1:~#</span> psrinfo
+<span class="go">0       on-line   since 06/10/2015 17:30:04</span>
+<span class="go">1       on-line   since 06/10/2015 17:30:07</span>
+<span class="go">2       on-line   since 06/10/2015 17:30:07</span>
+<span class="go">3       on-line   since 06/10/2015 17:30:07</span>
+<span class="go">4       on-line   since 06/10/2015 17:30:07</span>
+<span class="go">5       on-line   since 06/10/2015 17:30:07</span>
+<span class="go">6       on-line   since 06/10/2015 17:30:07</span>
+<span class="go">7       on-line   since 06/10/2015 17:30:07</span>
+</pre></div>
+
+
+<p>You see the difference? By default Solaris 11.2 assigns only one virtual
+CPU to a kernel zone (you can change that with <code>zonecfg</code> command). In
+Solaris 11.3 this default has been changed to 4 virtual CPUs. A
+non-global zone by default can use all the CPUs available in the global
+zone. Run the same <code>psrinfo</code> command in the global zone and compare the
+results.</p>
+<p>What does it mean for us? Non-global zones have more flexibility in
+terms of resource control. By default you give them what's available and
+they share all the resources with the global zone. Later you can <em>limit</em>
+their resource usage or assign specific groups of CPUs. It's completely
+opposite in kernel zones. By default they get the minimum, just one
+virtual CPU. You can change that if/when you need more, even during the
+initial configuration phase.</p>
+<p>What about memory? How much is available? As you can see below, the
+situation is very similar.</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@kzone1:~#</span> prtconf <span class="p">|</span> grep Memory
+<span class="go">Memory size: 2048 Megabytes</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="gp">root@zone1:~#</span> prtconf <span class="p">|</span> grep Memory
+<span class="go">prtconf: devinfo facility not available</span>
+<span class="go">Memory size: 16384 Megabytes</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="gp">root@solarislab:~#</span> prtconf <span class="p">|</span> grep Memory
+<span class="go">Memory size: 16384 Megabytes</span>
+</pre></div>
+
+
+<p>The same thing here: the non-global zone by default can use the whole
+physical memory available in the global zone. For the kernel zone we
+have to specify how much memory we want to assign to it. By default it's
+2 Gigabytes in <code>11.2</code> and 4 Gigabytes in <code>11.3</code>.</p>
+<h3 id="virtualization-support">Virtualization support</h3>
+<p>Also it's interesting to take a look at what <code>virtinfo(1M)</code> reports in
+each case: kernel zone, non-global zone and global zone.</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@kzone1:~#</span> virtinfo
+<span class="go">NAME            CLASS</span>
+<span class="go">kernel-zone     current</span>
+<span class="go">logical-domain  parent</span>
+<span class="go">non-global-zone supported</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="gp">root@zone1:~#</span> virtinfo
+<span class="go">NAME            CLASS</span>
+<span class="go">non-global-zone current</span>
+<span class="go">logical-domain  parent</span>
+<span class="go">logical-domain  supported</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="gp">root@solarislab:~#</span> virtinfo
+<span class="go">NAME            CLASS</span>
+<span class="go">logical-domain  current</span>
+<span class="go">non-global-zone supported</span>
+<span class="go">kernel-zone     supported</span>
+<span class="go">logical-domain  supported</span>
+</pre></div>
+
+
+<p>You can see that you can even create non-global zones inside kernel
+zones! You can do that, but remember: "Don't over-virtualize!"</p>
+<p>Another interesting test: try to run the <code>zonename</code> command in the
+global zone, kernel zone and non-global zone. What does it show in each
+of them?</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solarislab:~#</span> zonename
+<span class="go">global</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="gp">root@kzone1:~#</span> zonename
+<span class="go">global</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="gp">root@zone1:~#</span> zonename
+<span class="go">zone1</span>
+</pre></div>
+
+
+<p>Interesting! That means it's really hard to distinguish a kernel zone
+from a "true" global zone. Your applications will never notice that they
+are running in a virtualized environment.</p>
+<h3 id="packages">Packages</h3>
+<p>One of the great things about non-global zones is that you can manage
+software packages in them both from inside and outside. You can install
+packages being logged in a non-global zone, but more importantly, you
+can update, install and uninstall packages from the global zone.
+Normally, when you do <code>pkg update</code> in the global zone, all installed
+non-global zones are being updated too. You can install packages
+recursively into the zones by using <code>pkg install -r</code> command. Even more,
+you can name the specific zones you want to install the packages into,
+with <code>-z &lt;zonename&gt;</code> parameter, or exclude some zones with <code>-Z
+&lt;zonename&gt;</code>. What's important, you can do that even when the zones are
+not running. That's a big advantage of non-global zones in software
+management.</p>
+<p>As you might have guessed already, it's different in kernel zones. As
+soon as they have a separate block device with a file system in it, 
+that is not available from the global zone, we can't update their 
+packages without logging into the kernel zone. All package-related 
+commands&mdash;install, update, uninstall&mdash;should be performed 
+from within the kernel zone.</p>
+<p>Comparing software management operations in non-global zones and kernel
+zones, we can see that because non-global zones are more tightly
+integrated with the global zone, it gives us more flexibility in package
+operations. Kernel zones are more isolated by design (separate kernel,
+ZFS pool and process space), so they are treated as separate Solaris
+instances. Which approach is better&mdash;you decide, depending on your
+particular situation and requirements.</p>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../kz_basic/" title="Basic Configuration and Installation" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Basic Configuration and Installation
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../kz_suspend/" title="Kernel Zones Suspend and Resume" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Kernel Zones Suspend and Resume
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Oracle Corp., 2011-2017
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application-3964c0cb56.js"></script>
+      <script>app.initialize({url:{base:"../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

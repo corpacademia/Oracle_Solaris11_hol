@@ -1,0 +1,1086 @@
+
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Pavel Anni <pavel.anni@oracle.com>">
+      
+      
+        <link rel="shortcut icon" href="./assets/images/favicon.png">
+      
+      <meta name="generator" content="mkdocs-0.16.2, mkdocs-material-1.4.1">
+    
+    
+      
+        <title>Oracle Solaris 11 Hands-on Labs</title>
+      
+    
+    
+      <script src="./assets/javascripts/modernizr-56ade86843.js"></script>
+    
+    
+      <link rel="stylesheet" href="./assets/stylesheets/application-76741b64bc.css">
+      
+        <link rel="stylesheet" href="./assets/stylesheets/application-66fa0d9bba.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="red" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <a href="." title="Oracle Solaris 11 Hands-on Labs" class="md-icon md-icon--home md-header-nav__button">
+          </a>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+            
+            Introduction
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search">
+  <div class="md-search__overlay"></div>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <div class="md-header-nav__source">
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    
+      <i class="md-icon md-icon--home md-nav__button"></i>
+    
+    Oracle Solaris 11 Hands-on Labs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Introduction
+      </label>
+    
+    <a href="." title="Introduction" class="md-nav__link md-nav__link--active">
+      Introduction
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" title="Prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-virtual-box-vm" title="Using Virtual Box VM" class="md-nav__link">
+    Using Virtual Box VM
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-environment" title="The Environment" class="md-nav__link">
+    The Environment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-it-all-together" title="Putting It All Together" class="md-nav__link">
+    Putting It All Together
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-notes" title="Final Notes" class="md-nav__link">
+    Final Notes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-oracle-solaris-education" title="Further Oracle Solaris Education" class="md-nav__link">
+    Further Oracle Solaris Education
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      ZFS
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        ZFS
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="zfs/zfs/" title="ZFS Intro" class="md-nav__link">
+      ZFS Intro
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="zfs/zfs_pools/" title="ZFS Pools" class="md-nav__link">
+      ZFS Pools
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="zfs/zfs_fs/" title="ZFS File Systems" class="md-nav__link">
+      ZFS File Systems
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="zfs/zfs_compress/" title="ZFS Compression" class="md-nav__link">
+      ZFS Compression
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="zfs/zfs_dedup/" title="ZFS Deduplication:" class="md-nav__link">
+      ZFS Deduplication:
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="zfs/zfs_snap/" title="ZFS Snapshops" class="md-nav__link">
+      ZFS Snapshops
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="zfs/zfs_clones/" title="ZFS Clones" class="md-nav__link">
+      ZFS Clones
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="zfs/zfs_rights/" title="ZFS Rights Delegation" class="md-nav__link">
+      ZFS Rights Delegation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="zfs/zfs_backup/" title="ZFS Backup and Restore" class="md-nav__link">
+      ZFS Backup and Restore
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="zfs/zfs_free/" title="ZFS Free Space" class="md-nav__link">
+      ZFS Free Space
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="zfs/zfs_reservations/" title="ZFS Reservations" class="md-nav__link">
+      ZFS Reservations
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="zfs/zfs_shadow/" title="ZFS Shadow Migration" class="md-nav__link">
+      ZFS Shadow Migration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="zfs/zfs_cleanup/" title="Lab Cleanup" class="md-nav__link">
+      Lab Cleanup
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="be/be/" title="Boot Environments" class="md-nav__link">
+      Boot Environments
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Image Packaging System
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Image Packaging System
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="ips/ips/" title="IPS Intro" class="md-nav__link">
+      IPS Intro
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="ips/ips_repo/" title="IPS Lab Preparation" class="md-nav__link">
+      IPS Lab Preparation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="ips/ips_install/" title="IPS Package Installation" class="md-nav__link">
+      IPS Package Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="ips/ips_verify/" title="IPS Package Verification" class="md-nav__link">
+      IPS Package Verification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="ips/ips_be/" title="IPS and Boot Environments" class="md-nav__link">
+      IPS and Boot Environments
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="ips/ips_dev/" title="IPS for Developers" class="md-nav__link">
+      IPS for Developers
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="net/net/" title="Networking" class="md-nav__link">
+      Networking
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Virtualization
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Virtualization
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="virt/virt_pre/" title="Virtualization Lab Prerequisites" class="md-nav__link">
+      Virtualization Lab Prerequisites
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="virt/zone_install/" title="Zone Installation" class="md-nav__link">
+      Zone Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="virt/zone_inside/" title="Inside the Zone" class="md-nav__link">
+      Inside the Zone
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="virt/zone_cloning/" title="Zone Cloning" class="md-nav__link">
+      Zone Cloning
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="virt/zone_monitoring/" title="Zone Monitoring" class="md-nav__link">
+      Zone Monitoring
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="virt/zone_resource/" title="Zone Resource Management" class="md-nav__link">
+      Zone Resource Management
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Automated Installer
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Automated Installer
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="ai/ai_intro/" title="Automated Installer Intro" class="md-nav__link">
+      Automated Installer Intro
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="ai/ai_simple/" title="Simple Installation" class="md-nav__link">
+      Simple Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="ai/ai_another_ver/" title="Another Version of Oracle Solaris" class="md-nav__link">
+      Another Version of Oracle Solaris
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="ai/ai_packages/" title="Different Set of Packages" class="md-nav__link">
+      Different Set of Packages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="ai/ai_profiles/" title="System Configuration Profiles" class="md-nav__link">
+      System Configuration Profiles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="ai/ai_zones/" title="Zone Installation with AI" class="md-nav__link">
+      Zone Installation with AI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="ai/ai_os_clients/" title="Different OS Versions on Clients" class="md-nav__link">
+      Different OS Versions on Clients
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="ai/ai_uar/" title="Installing from Unified Archives" class="md-nav__link">
+      Installing from Unified Archives
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="ai/ai_summary/" title="AI Lab Summary" class="md-nav__link">
+      AI Lab Summary
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Kernel Zones
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Kernel Zones
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="kz/kz/" title="Kernel Zones Intro" class="md-nav__link">
+      Kernel Zones Intro
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="kz/kz_basic/" title="Basic Configuration and Installation" class="md-nav__link">
+      Basic Configuration and Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="kz/inside_outside/" title="Solaris Zones Inside and Outside" class="md-nav__link">
+      Solaris Zones Inside and Outside
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="kz/kz_suspend/" title="Kernel Zones Suspend and Resume" class="md-nav__link">
+      Kernel Zones Suspend and Resume
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="kz/kz_clone/" title="Kernel Zone Cloning" class="md-nav__link">
+      Kernel Zone Cloning
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" title="Prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-virtual-box-vm" title="Using Virtual Box VM" class="md-nav__link">
+    Using Virtual Box VM
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-environment" title="The Environment" class="md-nav__link">
+    The Environment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-it-all-together" title="Putting It All Together" class="md-nav__link">
+    Putting It All Together
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-notes" title="Final Notes" class="md-nav__link">
+    Final Notes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-oracle-solaris-education" title="Further Oracle Solaris Education" class="md-nav__link">
+    Further Oracle Solaris Education
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Introduction</h1>
+                
+                <p><img alt="Oracle Solaris 11" src="img/O_Solaris_11_clr.gif" style="float:
+right;" ></p>
+<p>In this lab we introduce the most interesting features of Oracle Solaris 11,
+based on real life use cases. We will:</p>
+<ul>
+<li>create a disk pool and a file system with ZFS; expand it; snapshot and
+    clone it; use ZFS compression and deduplication; use ZFS migration for
+    backup: <a href="zfs/zfs/">ZFS Lab</a></li>
+<li>create a new boot environment as a backup, make our current system
+    unbootable because of some fatal mistakes, reboot the system using
+    backup BE: <a href="be/be/">Boot Environments Lab</a></li>
+<li>use new packaging system called IPS to search, install, verify and
+    fix packages; update the system using IPS and Boot Environments
+    together: <a href="ips/ips/">IPS Lab</a></li>
+<li>use new networking commands, configure virtual network interfaces: <a href="net/net/">Networking Lab</a></li>
+<li>create a couple of Solaris virtual environments (zones); install some
+    applications into them; clone a zone; use Resource Management with the zones: <a href="virt/virt_pre/">Virtualization Lab</a></li>
+<li>learn how to install systems and zones with Automated Installer: <a href="ai/ai_intro/">AI Lab</a></li>
+<li>compare two virtualization options available in Oracle Solaris: non-global
+    zones and kernel zones: <a href="kz/kz/">Kernel Zones Lab</a> </li>
+</ul>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This lab requires access to an Oracle Solaris 11 system either natively or in a
+VirtualBox virtual machine.</p>
+<h3 id="using-virtual-box-vm">Using Virtual Box VM</h3>
+<p>If you're performing this lab on your laptop or desktop, we've provided
+a VirtualBox appliance that contains all the software and configuration
+necessary to complete this lab. All you need is VirtualBox software and
+a modern (with a CPU supporting virtualization turned on, AMD-V or VT-x)
+laptop/desktop with at least 3 GB of RAM and 10GB of free disk space.</p>
+<ul>
+<li>Download and install the latest version of VirtualBox for your
+    platform (<a href="http://www.virtualbox.org/wiki/Downloads">http://www.virtualbox.org/wiki/Downloads</a>).</li>
+<li>Download and install the latest version of VirtualBox Extensions
+    Pack (<a href="http://www.virtualbox.org/wiki/Downloads">http://www.virtualbox.org/wiki/Downloads</a>).</li>
+<li>Download or find on the provided DVD/USB and import the Hands On Lab
+    machine into VirtualBox (File &gt; Import Appliance). You will have
+    to accept the OTN Oracle Solaris license to use the appliance.</li>
+</ul>
+<h2 id="the-environment">The Environment</h2>
+<p>In this lab we are going to use Oracle Solaris 11 virtual appliance in
+Oracle VirtualBox environment. If you are using lab machines, the
+appliance is already installed. You can also download the appliance from
+Oracle Technology Network: (<a href="http://www.oracle.com/technetwork/server-storage/solaris11/downloads/vm-templates-2245495.html">http://www.oracle.com/technetwork/server-storage/solaris11/downloads/vm-templates-2245495.html</a>)</p>
+<p>By default, VirtualBox assigns the IP address <code>10.0.2.15</code> to the Solaris
+global zone. We will be using also IP addresses <code>10.0.2.21</code> and <code>10.0.2.22</code>
+for local zones. As we are using VirtualBox in NAT (network address
+translation) mode, this shouldn't interfere with your outside network
+environment.</p>
+<p>You should login into Solaris desktop with the following credentials:</p>
+<p>Username: <code>lab</code> Password: <code>oracle1</code></p>
+<p>After logging in, open a terminal window and assume the <code>root</code> role:</p>
+<div class="codehilite"><pre><span></span><span class="gp">lab@solaris:~$</span> su - 
+</pre></div>
+
+
+<p>Password for root is: <code>solaris1</code>.</p>
+<p>Note: we don't recommend to log in as <code>root</code>. In Oracle Solaris 11 it is
+prohibited by default; <code>root</code> is only a role, not a login name.</p>
+<h2 id="putting-it-all-together">Putting It All Together</h2>
+<p>The whole idea of this lab is to show you some Oracle Solaris 11 features that
+can be used to create a cloud infrastructure based on Solaris. You have
+just created storage pools and filesystems&mdash;think cloud storage. It
+was fast, it was simple, it was flexible. You have created and cloned
+Solaris zones with applications within them&mdash;think <em>cloud machine
+instances</em>. You have monitored and managed zones resources&mdash;think <em>cloud
+elasticity, metering and chargeback</em>. Add to that 
+Solaris <em>network virtualization</em>, Solaris <em>security</em>, Solaris <em>software lifecycle
+management</em> and many other features which make Oracle Solaris 11 truly
+cloud-oriented operating system. Try them and learn more about Solaris 11!</p>
+<h2 id="final-notes">Final Notes</h2>
+<p>The virtual appliance we used in this lab is configured to be able to
+perform zone installation without network access. Namely, we've
+configured an internal repository with just a small subset of packages
+necessary for zone installations. If you are going to continue using
+this appliance with open network access, you will need to change the
+repository address to Oracle's standard Solaris repository.</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> pkg set-publisher -G <span class="s1">&#39;*&#39;</span> -M <span class="s1">&#39;*&#39;</span> -g http://pkg.oracle.com/solaris/release -P solaris 
+</pre></div>
+
+
+<h2 id="further-oracle-solaris-education">Further Oracle Solaris Education</h2>
+<p>This Hands-on Lab is just and introduction in Oracle Solaris 11 world.
+We highly recommend to continue your education with Oracle University.
+There is a full set of new courses covering Oracle Solaris 11:</p>
+<ul>
+<li>Transition to Oracle Solaris 11</li>
+<li>What's New in Oracle Solaris 11</li>
+<li>What's New in Oracle Solaris 11 (Self-Study)</li>
+<li>Oracle Solaris 11 System Administration</li>
+<li>Oracle Solaris 11 Advanced System Administration</li>
+</ul>
+<p>Get more details at the Oracle University page:
+<a href="http://bit.ly/OracleSolaris11Edu">http://bit.ly/OracleSolaris11Edu</a> .</p>
+<p>If you prefer to study Oracle Solaris 11 on your own, there are a lot of books
+available: <a href="https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&amp;field-keywords=oracle+solaris+11">Oracle Solaris 11 books on Amazon</a></p>
+<p>Don't miss Oracle Solaris channel on YouTube: <a href="https://www.youtube.com/OracleSolaris">https://www.youtube.com/OracleSolaris</a> and especially the screencasts of most of the labs in this course:</p>
+<ul>
+<li><a href="https://www.youtube.com/playlist?list=PLrEMJQQgYLXhZ9-Qfc2tOVl1xNccg-Fvh">Season 1: The Basics</a></li>
+<li><a href="https://www.youtube.com/playlist?list=PLrEMJQQgYLXi9BJb0zd2hU63EP4qHqiQl">Season 2: Cloud in a Box</a></li>
+<li><a href="https://www.youtube.com/playlist?list=PLrEMJQQgYLXgyH6YC-OVIhnTIwwkaPpRP">Season 3: Tips and Tricks</a></li>
+</ul>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+        
+          <a href="zfs/zfs/" title="ZFS Intro" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                ZFS Intro
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Oracle Corp., 2011-2017
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="./assets/javascripts/application-3964c0cb56.js"></script>
+      <script>app.initialize({url:{base:"."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

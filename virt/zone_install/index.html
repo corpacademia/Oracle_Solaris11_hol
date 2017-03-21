@@ -1,0 +1,1100 @@
+
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Pavel Anni <pavel.anni@oracle.com>">
+      
+      
+        <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      
+      <meta name="generator" content="mkdocs-0.16.2, mkdocs-material-1.4.1">
+    
+    
+      
+        <title>Zone Installation - Oracle Solaris 11 Hands-on Labs</title>
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr-56ade86843.js"></script>
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application-76741b64bc.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-66fa0d9bba.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="red" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <a href="../.." title="Oracle Solaris 11 Hands-on Labs" class="md-icon md-icon--home md-header-nav__button">
+          </a>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  Virtualization
+                </span>
+              
+            
+            Zone Installation
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search">
+  <div class="md-search__overlay"></div>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <div class="md-header-nav__source">
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    
+      <i class="md-icon md-icon--home md-nav__button"></i>
+    
+    Oracle Solaris 11 Hands-on Labs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      ZFS
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        ZFS
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs/" title="ZFS Intro" class="md-nav__link">
+      ZFS Intro
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_pools/" title="ZFS Pools" class="md-nav__link">
+      ZFS Pools
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_fs/" title="ZFS File Systems" class="md-nav__link">
+      ZFS File Systems
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_compress/" title="ZFS Compression" class="md-nav__link">
+      ZFS Compression
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_dedup/" title="ZFS Deduplication:" class="md-nav__link">
+      ZFS Deduplication:
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_snap/" title="ZFS Snapshops" class="md-nav__link">
+      ZFS Snapshops
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_clones/" title="ZFS Clones" class="md-nav__link">
+      ZFS Clones
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_rights/" title="ZFS Rights Delegation" class="md-nav__link">
+      ZFS Rights Delegation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_backup/" title="ZFS Backup and Restore" class="md-nav__link">
+      ZFS Backup and Restore
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_free/" title="ZFS Free Space" class="md-nav__link">
+      ZFS Free Space
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_reservations/" title="ZFS Reservations" class="md-nav__link">
+      ZFS Reservations
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_shadow/" title="ZFS Shadow Migration" class="md-nav__link">
+      ZFS Shadow Migration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_cleanup/" title="Lab Cleanup" class="md-nav__link">
+      Lab Cleanup
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../be/be/" title="Boot Environments" class="md-nav__link">
+      Boot Environments
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Image Packaging System
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Image Packaging System
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ips/ips/" title="IPS Intro" class="md-nav__link">
+      IPS Intro
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ips/ips_repo/" title="IPS Lab Preparation" class="md-nav__link">
+      IPS Lab Preparation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ips/ips_install/" title="IPS Package Installation" class="md-nav__link">
+      IPS Package Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ips/ips_verify/" title="IPS Package Verification" class="md-nav__link">
+      IPS Package Verification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ips/ips_be/" title="IPS and Boot Environments" class="md-nav__link">
+      IPS and Boot Environments
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ips/ips_dev/" title="IPS for Developers" class="md-nav__link">
+      IPS for Developers
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../net/net/" title="Networking" class="md-nav__link">
+      Networking
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+    
+    <label class="md-nav__link" for="nav-6">
+      Virtualization
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Virtualization
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../virt_pre/" title="Virtualization Lab Prerequisites" class="md-nav__link">
+      Virtualization Lab Prerequisites
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+    <a href="./" title="Zone Installation" class="md-nav__link md-nav__link--active">
+      Zone Installation
+    </a>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../zone_inside/" title="Inside the Zone" class="md-nav__link">
+      Inside the Zone
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../zone_cloning/" title="Zone Cloning" class="md-nav__link">
+      Zone Cloning
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../zone_monitoring/" title="Zone Monitoring" class="md-nav__link">
+      Zone Monitoring
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../zone_resource/" title="Zone Resource Management" class="md-nav__link">
+      Zone Resource Management
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Automated Installer
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Automated Installer
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ai_intro/" title="Automated Installer Intro" class="md-nav__link">
+      Automated Installer Intro
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ai_simple/" title="Simple Installation" class="md-nav__link">
+      Simple Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ai_another_ver/" title="Another Version of Oracle Solaris" class="md-nav__link">
+      Another Version of Oracle Solaris
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ai_packages/" title="Different Set of Packages" class="md-nav__link">
+      Different Set of Packages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ai_profiles/" title="System Configuration Profiles" class="md-nav__link">
+      System Configuration Profiles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ai_zones/" title="Zone Installation with AI" class="md-nav__link">
+      Zone Installation with AI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ai_os_clients/" title="Different OS Versions on Clients" class="md-nav__link">
+      Different OS Versions on Clients
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ai_uar/" title="Installing from Unified Archives" class="md-nav__link">
+      Installing from Unified Archives
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ai_summary/" title="AI Lab Summary" class="md-nav__link">
+      AI Lab Summary
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Kernel Zones
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Kernel Zones
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kz/kz/" title="Kernel Zones Intro" class="md-nav__link">
+      Kernel Zones Intro
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kz/kz_basic/" title="Basic Configuration and Installation" class="md-nav__link">
+      Basic Configuration and Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kz/inside_outside/" title="Solaris Zones Inside and Outside" class="md-nav__link">
+      Solaris Zones Inside and Outside
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kz/kz_suspend/" title="Kernel Zones Suspend and Resume" class="md-nav__link">
+      Kernel Zones Suspend and Resume
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kz/kz_clone/" title="Kernel Zone Cloning" class="md-nav__link">
+      Kernel Zone Cloning
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Zone Installation</h1>
+                
+                <p><strong>Task:</strong> Your development team wants a separate environment to develop
+and test their new application.</p>
+<p><strong>Lab:</strong> We are going to use Solaris virtualization technology called
+Solaris Zones.</p>
+<div class="admonition note">
+<p class="admonition-title">60 seconds of theory</p>
+<p>Solaris Zones are isolated operating environments,
+which run inside a single Solaris instance. Each Solaris Zone has its
+own users, set of processes and applications, hostname and IP address.
+There are two types of zones: kernel zones and non-kernel zones. In this
+lab we will be working with non-kernel zones. They use the same kernel
+that is used by the host Solaris instance, also called "global zone".
+Each zone has it's own dataset ('zone root') where all system files are
+installed. Zones can use additional datasets for applications and users'
+data. By default in Solaris 11 zones use virtual network interface cards
+(VNICs) and "exclusive IP" which means that networking can be managed
+both from inside and outside the zone.</p>
+</div>
+<p>When creating a zone we have to define two most important parameters:
+the zone root's location and the network configuration. In the simplest
+possible case both of them can be left to their default values. Zone
+root by default will be located in <code>/system/zones/zonename</code>. Of course,
+you can change that, but in this lab we'll leave it at default.
+Networking by default is configured as an "automatic VNIC" which is
+created automatically at the zone's boot time and destroyed after zone
+halts. By default the zone's IP address is defined inside the zone and
+quite possibly by a different system administrator. In most datacenter
+situations though, you would like to control yourself the IP addresses
+assigned to your zones. This is what we are going to do in this lab.</p>
+<p>Start with this simple command:</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> zonecfg -z zone1 
+<span class="go">zone1: No such zone configured </span>
+<span class="go">Use &#39;create&#39; to begin configuring a new zone. </span>
+<span class="go">OK, if you say so...</span>
+<span class="go">zonecfg:zone1&gt; create </span>
+<span class="go">create: Using system default template &#39;SYSdefault&#39;</span>
+</pre></div>
+
+
+<p>Let's look at what can be configured and what is already configured:</p>
+<div class="codehilite"><pre><span></span>zonecfg:zone1&gt; info
+zonename: zone1
+zonepath.template: /system/zones/%{zonename}
+zonepath: /system/zones/zone1
+brand: solaris
+autoboot: false
+autoshutdown: shutdown
+bootargs: 
+file-mac-profile: 
+pool: 
+limitpriv: 
+scheduling-class: 
+ip-type: exclusive
+hostid: 
+tenant: 
+fs-allowed: 
+anet:
+      linkname: net0
+      lower-link: auto
+      allowed-address not specified
+      configure-allowed-address: true
+      defrouter not specified
+      allowed-dhcp-cids not specified
+      link-protection: mac-nospoof
+      mac-address: auto
+      mac-prefix not specified
+      mac-slot not specified
+      vlan-id not specified
+      priority not specified
+      rxrings not specified
+      txrings not specified
+      mtu not specified
+      maxbw not specified
+      rxfanout not specified
+      vsi-typeid not specified
+      vsi-vers not specified
+      vsi-mgrid not specified
+      etsbw-lcl not specified
+      cos not specified
+      pkey not specified
+      linkmode not specified
+      evs not specified
+      vport not specified
+</pre></div>
+
+
+<p>As you can see, <code>zonepath</code> is configured by default and one networking
+interface, <code>anet</code>, is already there. To make sure the zone's IP address
+is configured properly, we'll define it here, in <code>zonecfg</code>, along with the
+default router. In that case we can be sure that it can't be changed
+from inside the zone (maliciously or by mistake).</p>
+<div class="codehilite"><pre><span></span>zonecfg:zone1&gt; select anet linkname=net0
+(In spite of having only one anet, we still have to specify which one we select for configuration) 
+zonecfg:zone1:anet&gt; set allowed-address=10.0.2.21/24 
+(Use the IP address assigned by your instructor)
+zonecfg:zone1:anet&gt; set defrouter=10.0.2.2 
+(Your instructor will give you the default gateway address)
+zonecfg:zone1:anet&gt; end
+zonecfg:zone1&gt; exit
+</pre></div>
+
+
+<p>To check the status of our newly created zone:</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> zoneadm list -cv 
+<span class="go">ID NAME             STATUS     PATH                           BRAND    IP    </span>
+<span class="go">0 global           running    /                              solaris  shared</span>
+<span class="go">- zone1            configured /zones/zone1                   solaris  excl  </span>
+</pre></div>
+
+
+<p>The zone is configured, we can install and boot it right now. But before
+the installation we'll configure a profile for the Solaris instance
+which will be running inside the zone. By doing that we are avoiding
+configuring the zone interactively during the first boot. Our zone will
+be ready for use immediately after start.</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> sysconfig create-profile -o /root/zone1-profile
+</pre></div>
+
+
+<p>This command will bring you to the interactive dialog very similar to
+the standard Solaris installaion. Use <kbd>F2</kbd> to confirm your choices and
+move from screen to screen. If <kbd>F2</kbd> doesn't work for you, 
+use <kbd>Esc</kbd>-<kbd>2</kbd> (press
+and release <kbd>Esc</kbd> and then <kbd>2</kbd>). You will have to enter:</p>
+<ul>
+<li>Computer Name (hostname for the zone): <code>zone1</code></li>
+<li>Network configuration: choose <strong>Automatically</strong></li>
+<li>Time zone: choose your time zone from the list</li>
+<li>Date: confirm the current date</li>
+<li>Root password: <code>solaris1</code></li>
+<li>New user account details: real name, login name and password. This
+    will be the first user of the zone. We have entered <code>Zone User</code>,
+    <code>zuser</code>, <code>oracle1</code></li>
+<li>Other options leave to defaults</li>
+</ul>
+<p>Now, when the zone's profile is created, we can install the zone and
+initialize it using this profile.</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> zoneadm -z zone1 install -c /root/zone1-profile 
+<span class="go">A ZFS file system has been created for this zone.</span>
+<span class="go">Progress being logged to /var/log/zones/zoneadm.20111113T200358Z.zone1.install</span>
+<span class="go">   Image: Preparing at /zones/zone1/root.</span>
+
+<span class="go">Install Log: /system/volatile/install.4418/install_log</span>
+<span class="go">AI Manifest: /tmp/manifest.xml.NVaaNi</span>
+<span class="go">SC Profile: /root/zone1-profile.xml</span>
+<span class="go">Zonename: zone1</span>
+<span class="go">Installation: Starting ...</span>
+</pre></div>
+
+
+<p>Here you can take a break. The installation will take about 8-10
+minutes, depending on your computer.</p>
+<div class="codehilite"><pre><span></span><span class="go">...Long output is skipped... </span>
+<span class="go">Next Steps: Boot the zone, then log into the zone console (zlogin -C) </span>
+<span class="go">to complete the configuration process. </span>
+</pre></div>
+
+
+<p>Check the status again:</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> zoneadm list -cv 
+<span class="go">ID NAME             STATUS     PATH                           BRAND    IP    </span>
+<span class="go">0 global           running    /                              solaris  shared</span>
+<span class="go">- zone1            installed  /zones/zone1                   solaris  excl  </span>
+</pre></div>
+
+
+<p>It's time to boot our zone:</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> zoneadm -z zone1 boot 
+<span class="gp">root@solaris:~#</span> zoneadm list -cv
+<span class="go">ID NAME             STATUS     PATH                           BRAND    IP    </span>
+<span class="go">0 global           running    /                              solaris  shared</span>
+<span class="go">1 zone1            running    /zones/zone1                   solaris  excl  </span>
+</pre></div>
+
+
+<p>Note the zone's status has changed to <code>running</code>.</p>
+<p>Now log into our zone's console (note <code>-C</code>). You will have to wait a
+couple of minutes while the system is initializing services for the
+first time. While waiting for the zone to boot completely, you can open
+another terminal window, become root (<code>su -</code>) and login into the zone
+directly with <code>zlogin zone1</code> This way you don't have to wait for all the
+services to start, but you can watch the booting process in real time.
+Run <code>prstat</code> and watch various system services starting one after
+another.</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> zlogin -C zone1 
+<span class="go">[Connected to zone &#39;zone1&#39; console] </span>
+</pre></div>
+
+
+<p>You will get the standard Solaris login prompt (you might need to press
+<kbd>Enter</kbd> one more time). Congratulations! You've just configured
+"virtualization within virtualization" using Oracle technologies:
+Solaris zones within Oracle VirtualBox (or within OVM for SPARC a.k.a.
+Logical Domains).</p>
+<p>Try to login using <code>root</code>'s credentials (<code>root/solaris1</code>). Here is the
+result:</p>
+<div class="codehilite"><pre><span></span><span class="go">zone1 console login: root</span>
+<span class="go">Password: </span>
+<span class="go">Roles can not login directly</span>
+<span class="go">Login incorrect</span>
+<span class="go">Nov 13 15:23:07 zone1 login: login account failure: Permission denied</span>
+</pre></div>
+
+
+<p>A-ha! This is a new Solaris 11 security feature called "root as a role".
+That means that you can't login into a system as <code>root</code>. You have to use
+normal user's credentials and only then you will be able to use <code>sudo</code>
+or <code>pfexec</code> according to your roles and privileges.</p>
+<p>Try to login again with <code>zuser/oracle1</code>.</p>
+<div class="codehilite"><pre><span></span><span class="go">Oracle Corporation      SunOS 5.11      11.1    September 2012</span>
+<span class="gp">zuser@zone1:~$</span>
+</pre></div>
+
+
+<p>Success!</p>
+<p>Note: to escape from the zone's console first type <code>exit</code> to close the
+session and then at the console prompt use: <kbd>~</kbd> <kbd>.</kbd> (tilde period).</p>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../virt_pre/" title="Virtualization Lab Prerequisites" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Virtualization Lab Prerequisites
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../zone_inside/" title="Inside the Zone" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Inside the Zone
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Oracle Corp., 2011-2017
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application-3964c0cb56.js"></script>
+      <script>app.initialize({url:{base:"../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

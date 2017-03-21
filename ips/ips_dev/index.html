@@ -1,0 +1,1155 @@
+
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Pavel Anni <pavel.anni@oracle.com>">
+      
+      
+        <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      
+      <meta name="generator" content="mkdocs-0.16.2, mkdocs-material-1.4.1">
+    
+    
+      
+        <title>IPS for Developers - Oracle Solaris 11 Hands-on Labs</title>
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr-56ade86843.js"></script>
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application-76741b64bc.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-66fa0d9bba.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="red" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <a href="../.." title="Oracle Solaris 11 Hands-on Labs" class="md-icon md-icon--home md-header-nav__button">
+          </a>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  Image Packaging System
+                </span>
+              
+            
+            IPS for Developers
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search">
+  <div class="md-search__overlay"></div>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <div class="md-header-nav__source">
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    
+      <i class="md-icon md-icon--home md-nav__button"></i>
+    
+    Oracle Solaris 11 Hands-on Labs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      ZFS
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        ZFS
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs/" title="ZFS Intro" class="md-nav__link">
+      ZFS Intro
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_pools/" title="ZFS Pools" class="md-nav__link">
+      ZFS Pools
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_fs/" title="ZFS File Systems" class="md-nav__link">
+      ZFS File Systems
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_compress/" title="ZFS Compression" class="md-nav__link">
+      ZFS Compression
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_dedup/" title="ZFS Deduplication:" class="md-nav__link">
+      ZFS Deduplication:
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_snap/" title="ZFS Snapshops" class="md-nav__link">
+      ZFS Snapshops
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_clones/" title="ZFS Clones" class="md-nav__link">
+      ZFS Clones
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_rights/" title="ZFS Rights Delegation" class="md-nav__link">
+      ZFS Rights Delegation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_backup/" title="ZFS Backup and Restore" class="md-nav__link">
+      ZFS Backup and Restore
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_free/" title="ZFS Free Space" class="md-nav__link">
+      ZFS Free Space
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_reservations/" title="ZFS Reservations" class="md-nav__link">
+      ZFS Reservations
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_shadow/" title="ZFS Shadow Migration" class="md-nav__link">
+      ZFS Shadow Migration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_cleanup/" title="Lab Cleanup" class="md-nav__link">
+      Lab Cleanup
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../be/be/" title="Boot Environments" class="md-nav__link">
+      Boot Environments
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Image Packaging System
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Image Packaging System
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ips/" title="IPS Intro" class="md-nav__link">
+      IPS Intro
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ips_repo/" title="IPS Lab Preparation" class="md-nav__link">
+      IPS Lab Preparation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ips_install/" title="IPS Package Installation" class="md-nav__link">
+      IPS Package Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ips_verify/" title="IPS Package Verification" class="md-nav__link">
+      IPS Package Verification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ips_be/" title="IPS and Boot Environments" class="md-nav__link">
+      IPS and Boot Environments
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        IPS for Developers
+      </label>
+    
+    <a href="./" title="IPS for Developers" class="md-nav__link md-nav__link--active">
+      IPS for Developers
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#application-packaging-with-ips" title="Application packaging with IPS" class="md-nav__link">
+    Application packaging with IPS
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../net/net/" title="Networking" class="md-nav__link">
+      Networking
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Virtualization
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Virtualization
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../virt/virt_pre/" title="Virtualization Lab Prerequisites" class="md-nav__link">
+      Virtualization Lab Prerequisites
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../virt/zone_install/" title="Zone Installation" class="md-nav__link">
+      Zone Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../virt/zone_inside/" title="Inside the Zone" class="md-nav__link">
+      Inside the Zone
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../virt/zone_cloning/" title="Zone Cloning" class="md-nav__link">
+      Zone Cloning
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../virt/zone_monitoring/" title="Zone Monitoring" class="md-nav__link">
+      Zone Monitoring
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../virt/zone_resource/" title="Zone Resource Management" class="md-nav__link">
+      Zone Resource Management
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Automated Installer
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Automated Installer
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ai_intro/" title="Automated Installer Intro" class="md-nav__link">
+      Automated Installer Intro
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ai_simple/" title="Simple Installation" class="md-nav__link">
+      Simple Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ai_another_ver/" title="Another Version of Oracle Solaris" class="md-nav__link">
+      Another Version of Oracle Solaris
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ai_packages/" title="Different Set of Packages" class="md-nav__link">
+      Different Set of Packages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ai_profiles/" title="System Configuration Profiles" class="md-nav__link">
+      System Configuration Profiles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ai_zones/" title="Zone Installation with AI" class="md-nav__link">
+      Zone Installation with AI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ai_os_clients/" title="Different OS Versions on Clients" class="md-nav__link">
+      Different OS Versions on Clients
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ai_uar/" title="Installing from Unified Archives" class="md-nav__link">
+      Installing from Unified Archives
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ai_summary/" title="AI Lab Summary" class="md-nav__link">
+      AI Lab Summary
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Kernel Zones
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Kernel Zones
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kz/kz/" title="Kernel Zones Intro" class="md-nav__link">
+      Kernel Zones Intro
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kz/kz_basic/" title="Basic Configuration and Installation" class="md-nav__link">
+      Basic Configuration and Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kz/inside_outside/" title="Solaris Zones Inside and Outside" class="md-nav__link">
+      Solaris Zones Inside and Outside
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kz/kz_suspend/" title="Kernel Zones Suspend and Resume" class="md-nav__link">
+      Kernel Zones Suspend and Resume
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kz/kz_clone/" title="Kernel Zone Cloning" class="md-nav__link">
+      Kernel Zone Cloning
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#application-packaging-with-ips" title="Application packaging with IPS" class="md-nav__link">
+    Application packaging with IPS
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>IPS for Developers</h1>
+                
+                <h2 id="application-packaging-with-ips">Application packaging with IPS</h2>
+<p>The Image Packaging System (IPS) is the network based package management
+system included in Oracle Solaris 11. It provides a framework for
+complete software lifecycle management such as installation, upgrade and
+removal of software packages. IPS takes advantage of ZFS using ZFS boot
+environments, such that administrators can update a system while running
+production services and then boot into the new boot environment when a
+planned maintenance window comes along. IPS uses package repositories to
+install software over the network, and provides for automatic package
+dependencies.</p>
+<p>In this session we will be taking the zoneplot, a command line utility
+for measuring and plotting zone statistics, and creating an IPS package
+for it that we can install onto the system. This is a very simple
+example to give you an overview of the packaging process, but it's
+recommended you take at look at the <a href="http://docs.oracle.com/cd/E26502_01/html/E21383/index.html">IPS Developer
+Guide</a>.</p>
+<p>For this package we will need two scripts. First accepts a Unix pipe
+stream and shows its data using gnuplot. Second script converts the
+zonestat outpout into a stream readable by the first script. Both
+scripts are publicly available. Download them from the Internet:</p>
+<div class="codehilite"><pre><span></span>root@solaris:~# wget http://www.lysium.de/sw/driveGnuPlotStreams.pl
+root@solaris:~# wget http://zoneplot.googlecode.com/files/zoneplot
+</pre></div>
+
+
+<p>IPS uses package manifests to describe how a package is assembled - what
+files or directories are included, what dependencies the package has,
+and basic information about a package such as name, version and
+description. Fortunately we can generate much of this manifest using IPS
+and pointing it to a location, or proto area, which contains all the
+files and directories that we want to include in this package. We'll
+start by creating this proto area and laying things out how we'd expect
+the package to look like:</p>
+<div class="codehilite"><pre><span></span>root@solaris:~# mkdir -p PROTO/usr/bin
+</pre></div>
+
+
+<p>In this case we're creating a PROTO directory in $HOME. Within that
+directory, we have a /usr/bin layout. We'll copy our scripts into this
+proto area and make them executable:</p>
+<div class="codehilite"><pre><span></span>root@solaris:~# cp zoneplot driveGnuPlotStreams.pl PROTO/usr/bin
+root@solaris:~# chmod a+x PROTO/usr/bin/*
+</pre></div>
+
+
+<p>We can see in the following graphic how our directory is now laid out</p>
+<div class="codehilite"><pre><span></span> zoneplot     driveGnuPlotStreams.pl
+      \                   /
+              bin
+               |
+              usr
+               |
+               PROTO
+</pre></div>
+
+
+<p>Let's generate an initial manifest:</p>
+<div class="codehilite"><pre><span></span>root@solaris:~# pkgsend generate PROTO &gt; zoneplot.p5m.gen
+</pre></div>
+
+
+<p>Let's look at the contents:</p>
+<div class="codehilite"><pre><span></span>root@solaris:~# cat zoneplot.p5m.gen
+dir group=bin mode=0755 owner=root path=usr
+dir group=bin mode=0755 owner=root path=usr/bin
+file usr/bin/driveGnuPlotStreams.pl group=bin mode=0755 owner=root path=usr/bin/driveGnuPlotStreams.pl
+file usr/bin/zoneplot group=bin mode=0755 owner=root path=usr/bin/zoneplot
+</pre></div>
+
+
+<p>As you'll see here there are two sets of 'actions' - two directory
+actions that describe usr and usr/bin directories, and two file actions
+that describe <code>zoneplot</code> and <code>driveGnuPlotStreams.pl</code>. These are the
+contents of our package. Usual IPS practice encourages us to not include
+directory actions that are already defined on the system. We will remove
+them.</p>
+<div class="codehilite"><pre><span></span>root@solaris:~# vi zoneplot.p5m.gen
+root@solaris:~# cat zoneplot.p5m.gen
+file usr/bin/driveGnuPlotStreams.pl group=bin mode=0755 owner=root path=usr/bin/driveGnuPlotStreams.pl
+file usr/bin/zoneplot group=bin mode=0755 owner=root path=usr/bin/zoneplot
+</pre></div>
+
+
+<p>The next thing that we need to do is to add some basic meta-information
+about the package - including package name, package version and package
+description. Add the following lines to our manifest:</p>
+<div class="codehilite"><pre><span></span>root@solaris:~# vi zoneplot.p5m.gen
+root@solaris:~# cat zoneplot.p5m.gen
+set name=pkg.fmri value=zoneplot@1.0,5.11-0
+set name=pkg.summary value=&quot;zoneplot utility&quot;
+set name=pkg.description value=&quot;Utility to plot the output of zone statistics&quot;
+set name=info.classification value=&quot;org.opensolaris.category.2008:Applications/System Utilities&quot;
+file usr/bin/driveGnuPlotStreams.pl group=bin mode=0755 owner=root path=usr/bin/driveGnuPlotStreams.pl
+file usr/bin/zoneplot group=bin mode=0755 owner=root path=usr/bin/zoneplot
+</pre></div>
+
+
+<p>IPS has automatic package dependency checking for all package management
+operations on the system. For example, if a package requires other
+packages to work it will automatically install these. We will do the
+same for zoneplot. We will first try and detect what package
+dependencies this package might have using the pkgdepend generate
+command:</p>
+<div class="codehilite"><pre><span></span>root@solaris:~# pkgdepend generate -md PROTO zoneplot.p5m.gen &gt; zoneplot.p5m.dep
+root@solaris:~# cat zonepot.p5m.dep
+set name=pkg.fmri value=zoneplot@1.0,5.11-0
+set name=pkg.summary value=&quot;zoneplot utility&quot;
+set name=pkg.description value=&quot;Utility to plot the output of zone statistics&quot;
+set name=info.classification value=&quot;org.opensolaris.category.2008:Applications/System Utilities&quot;
+file usr/bin/zoneplot path=usr/bin/zoneplot owner=root group=bin mode=0755
+file usr/bin/driveGnuPlotStreams.pl path=usr/bin/driveGnuPlotStreams.pl owner=root group=bin mode=0755
+depend fmri=__TBD pkg.debug.depend.file=perl pkg.debug.depend.path=usr/bin pkg.debug.depend.reason=usr/bin/driveGnuPlotStreams.pl pkg.debug.depend.type=script type=require
+depend fmri=__TBD pkg.debug.depend.file=bash pkg.debug.depend.path=usr/bin pkg.debug.depend.reason=usr/bin/zoneplot pkg.debug.depend.type=script type=require
+</pre></div>
+
+
+<p>You'll see that we have detected that there are two files in this
+package (zoneplot and driveGnuPlotStreams.pl) that have external
+dependencies. zoneplot is a bash script and thus depends on bash.
+driveGnuPlotStreams.pl is a perl script and thus depends on perl. While
+both of these are already installed by default on Oracle Solaris 11,
+it's good practice to make sure we define these dependencies.</p>
+<p>The next step is resolving these dependencies into the packages they are
+delivered in. We need to determine what packages bash and perl are a
+part of. We use the pkgdepend resolve command to achieve this.</p>
+<div class="codehilite"><pre><span></span>root@solaris:~# pkgdepend resolve -m zoneplot.p5m.dep
+root@solaris:~# cat zoneplot.p5m.dep.res (NOTE the .res extension!)
+set name=pkg.fmri value=zoneplot@1.1,5.11-0
+set name=pkg.summary value=&quot;zoneplot utility&quot;
+set name=pkg.description value=&quot;Utility to plot the output of zone statistics&quot;
+set name=info.classification value=&quot;org.opensolaris.category.2008:Applications/System Utilities&quot;
+file usr/bin/zoneplot path=usr/bin/zoneplot owner=root group=bin mode=0755
+file usr/bin/driveGnuPlotStreams.pl path=usr/bin/driveGnuPlotStreams.pl owner=root group=bin mode=0755
+depend fmri=pkg:/runtime/perl-512@5.12.4-0.175.1.0.0.24.0 type=require
+depend fmri=pkg:/shell/bash@4.1.9-0.175.1.0.0.24.0 type=require
+</pre></div>
+
+
+<p>We can see that these dependencies have been resolved to
+pkg:/runtime/perl-512 and pkg:/shell/bash. While IPS does a good job at
+trying to detect dependencies by looking at files (ELF headers, #!
+script definitions, etc.), sometimes we will have to manually provide
+additional dependencies. In this case, we know that this utility depends
+on gnuplot to plot the statistics graphically, so we will add this to
+our manifest.</p>
+<p>First we have to figure out the gnuplot's FMRI:</p>
+<div class="codehilite"><pre><span></span>root@solaris:~# pkg search -o pkg.shortfmri gnuplot
+PKG.SHORTFMRI
+pkg:/image/gnuplot@4.6.0-0.175.1.0.0.24.0
+</pre></div>
+
+
+<p>Now copy this FMRI into the <code>zoneplot.p5m.dep.res</code> file as following:</p>
+<div class="codehilite"><pre><span></span>root@solaris:~# vi zoneplot.p5m.dep.res
+root@solaris:~# cat zoneplot.p5m.dep.res
+set name=pkg.fmri value=zoneplot@1.1,5.11-0
+set name=pkg.summary value=&quot;zoneplot utility&quot;
+set name=pkg.description value=&quot;Utility to plot the output of zone statistics&quot;
+set name=info.classification value=&quot;org.opensolaris.category.2008:Applications/System Utilities&quot;
+file usr/bin/zoneplot path=usr/bin/zoneplot owner=root group=bin mode=0755
+file usr/bin/driveGnuPlotStreams.pl path=usr/bin/driveGnuPlotStreams.pl owner=root group=bin mode=0755
+depend fmri=pkg:/runtime/perl-512@5.12.4-0.175.1.0.0.24.0 type=require
+depend fmri=pkg:/shell/bash@4.1.9-0.175.1.0.0.24.0 type=require
+depend fmri=pkg:/image/gnuplot@4.6.0,5.11-0.175.1.0.0.24.0 type=require
+</pre></div>
+
+
+<p>Now that we have our PROTO area and manifest completed, it is now time
+to publish this package to an IPS repository. First we will need to
+create a repository to host this package - it's best practice not to
+publish to the existing solaris default publishers even if you have a
+copy of them locally.</p>
+<p>Let's first create a ZFS data set to host our repository:</p>
+<div class="codehilite"><pre><span></span>root@solaris:~# zfs create -o mountpoint=/repository rpool/repository
+</pre></div>
+
+
+<p>And now create an IPS package repository there:</p>
+<div class="codehilite"><pre><span></span>root@solaris:~# pkgrepo create /repository
+</pre></div>
+
+
+<p>We will need to set the publisher prefix of this repository so that we
+can add it to our publisher configuration on our system. We will call it
+'zoneplot':</p>
+<div class="codehilite"><pre><span></span>root@solaris:~# pkgrepo -s /repository set publisher/prefix=zoneplot
+</pre></div>
+
+
+<p>Now we are ready to publish our package:</p>
+<div class="codehilite"><pre><span></span>root@solaris:~# pkgsend -s /repository publish -d PROTO zoneplot.p5m.dep.res
+pkg://zoneplot/zoneplot@1.0,5.11-0:20130524T160043Z
+PUBLISHED
+</pre></div>
+
+
+<p>We can confirm this by taking a look at the status of the repository:</p>
+<div class="codehilite"><pre><span></span>root@solaris:~# pkgrepo -s /repository info
+PUBLISHER  PACKAGES  STATUS           UPDATED
+zoneplot         1                      online                2013-05-24T16:00:43.695049Z
+</pre></div>
+
+
+<p>We can query the package now within the repository:</p>
+<div class="codehilite"><pre><span></span>root@solaris:~# pkg info -g /repository zoneplot
+          Name: zoneplot
+       Summary: zoneplot utility
+   Description: Utility to plot the output of zone statistics
+      Category: Applications/System Utilities
+         State: Not installed
+     Publisher: zoneplot
+       Version: 1.0
+ Build Release: 5.11
+        Branch: 0
+Packaging Date: May 24, 2013 04:00:43 PM
+          Size: 6.04 kB
+          FMRI: pkg://zoneplot/zoneplot@1.2,5.11-0:20130524T160043Z
+</pre></div>
+
+
+<p>Let's go ahead and add this publisher to our configuration:</p>
+<div class="codehilite"><pre><span></span>root@solaris:~# pkg set-publisher -p /repository
+root@solaris:~# pkg publisher
+PUBLISHER            TYPE      STATUS P LOCATION
+solaris                        origin     online      F http://pkg.oracle.com/solaris/release
+zoneplot                       origin     online      F file:///repository
+</pre></div>
+
+
+<p>And now finally install zoneplot (you will see that it will pull in a
+number of package dependencies):</p>
+<div class="codehilite"><pre><span></span>root@solaris:~# pkg install zoneplot
+</pre></div>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../ips_be/" title="IPS and Boot Environments" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                IPS and Boot Environments
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../net/net/" title="Networking" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Networking
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Oracle Corp., 2011-2017
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application-3964c0cb56.js"></script>
+      <script>app.initialize({url:{base:"../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

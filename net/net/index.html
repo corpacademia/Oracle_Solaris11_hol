@@ -1,0 +1,1353 @@
+
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Pavel Anni <pavel.anni@oracle.com>">
+      
+      
+        <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      
+      <meta name="generator" content="mkdocs-0.16.2, mkdocs-material-1.4.1">
+    
+    
+      
+        <title>Networking - Oracle Solaris 11 Hands-on Labs</title>
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr-56ade86843.js"></script>
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application-76741b64bc.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-66fa0d9bba.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="red" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <a href="../.." title="Oracle Solaris 11 Hands-on Labs" class="md-icon md-icon--home md-header-nav__button">
+          </a>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+            
+            Networking
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search">
+  <div class="md-search__overlay"></div>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <div class="md-header-nav__source">
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    
+      <i class="md-icon md-icon--home md-nav__button"></i>
+    
+    Oracle Solaris 11 Hands-on Labs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      ZFS
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        ZFS
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs/" title="ZFS Intro" class="md-nav__link">
+      ZFS Intro
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_pools/" title="ZFS Pools" class="md-nav__link">
+      ZFS Pools
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_fs/" title="ZFS File Systems" class="md-nav__link">
+      ZFS File Systems
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_compress/" title="ZFS Compression" class="md-nav__link">
+      ZFS Compression
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_dedup/" title="ZFS Deduplication:" class="md-nav__link">
+      ZFS Deduplication:
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_snap/" title="ZFS Snapshops" class="md-nav__link">
+      ZFS Snapshops
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_clones/" title="ZFS Clones" class="md-nav__link">
+      ZFS Clones
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_rights/" title="ZFS Rights Delegation" class="md-nav__link">
+      ZFS Rights Delegation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_backup/" title="ZFS Backup and Restore" class="md-nav__link">
+      ZFS Backup and Restore
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_free/" title="ZFS Free Space" class="md-nav__link">
+      ZFS Free Space
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_reservations/" title="ZFS Reservations" class="md-nav__link">
+      ZFS Reservations
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_shadow/" title="ZFS Shadow Migration" class="md-nav__link">
+      ZFS Shadow Migration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_cleanup/" title="Lab Cleanup" class="md-nav__link">
+      Lab Cleanup
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../be/be/" title="Boot Environments" class="md-nav__link">
+      Boot Environments
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Image Packaging System
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Image Packaging System
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ips/ips/" title="IPS Intro" class="md-nav__link">
+      IPS Intro
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ips/ips_repo/" title="IPS Lab Preparation" class="md-nav__link">
+      IPS Lab Preparation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ips/ips_install/" title="IPS Package Installation" class="md-nav__link">
+      IPS Package Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ips/ips_verify/" title="IPS Package Verification" class="md-nav__link">
+      IPS Package Verification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ips/ips_be/" title="IPS and Boot Environments" class="md-nav__link">
+      IPS and Boot Environments
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ips/ips_dev/" title="IPS for Developers" class="md-nav__link">
+      IPS for Developers
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Networking
+      </label>
+    
+    <a href="./" title="Networking" class="md-nav__link md-nav__link--active">
+      Networking
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-n1-solaris-11-networking-basics" title="Exercise N.1: Solaris 11 Networking Basics" class="md-nav__link">
+    Exercise N.1: Solaris 11 Networking Basics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-n2-network-virtualization" title="Exercise N.2: Network Virtualization" class="md-nav__link">
+    Exercise N.2: Network Virtualization
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Virtualization
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Virtualization
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../virt/virt_pre/" title="Virtualization Lab Prerequisites" class="md-nav__link">
+      Virtualization Lab Prerequisites
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../virt/zone_install/" title="Zone Installation" class="md-nav__link">
+      Zone Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../virt/zone_inside/" title="Inside the Zone" class="md-nav__link">
+      Inside the Zone
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../virt/zone_cloning/" title="Zone Cloning" class="md-nav__link">
+      Zone Cloning
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../virt/zone_monitoring/" title="Zone Monitoring" class="md-nav__link">
+      Zone Monitoring
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../virt/zone_resource/" title="Zone Resource Management" class="md-nav__link">
+      Zone Resource Management
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Automated Installer
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Automated Installer
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ai_intro/" title="Automated Installer Intro" class="md-nav__link">
+      Automated Installer Intro
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ai_simple/" title="Simple Installation" class="md-nav__link">
+      Simple Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ai_another_ver/" title="Another Version of Oracle Solaris" class="md-nav__link">
+      Another Version of Oracle Solaris
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ai_packages/" title="Different Set of Packages" class="md-nav__link">
+      Different Set of Packages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ai_profiles/" title="System Configuration Profiles" class="md-nav__link">
+      System Configuration Profiles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ai_zones/" title="Zone Installation with AI" class="md-nav__link">
+      Zone Installation with AI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ai_os_clients/" title="Different OS Versions on Clients" class="md-nav__link">
+      Different OS Versions on Clients
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ai_uar/" title="Installing from Unified Archives" class="md-nav__link">
+      Installing from Unified Archives
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ai_summary/" title="AI Lab Summary" class="md-nav__link">
+      AI Lab Summary
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Kernel Zones
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Kernel Zones
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kz/kz/" title="Kernel Zones Intro" class="md-nav__link">
+      Kernel Zones Intro
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kz/kz_basic/" title="Basic Configuration and Installation" class="md-nav__link">
+      Basic Configuration and Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kz/inside_outside/" title="Solaris Zones Inside and Outside" class="md-nav__link">
+      Solaris Zones Inside and Outside
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kz/kz_suspend/" title="Kernel Zones Suspend and Resume" class="md-nav__link">
+      Kernel Zones Suspend and Resume
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kz/kz_clone/" title="Kernel Zone Cloning" class="md-nav__link">
+      Kernel Zone Cloning
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-n1-solaris-11-networking-basics" title="Exercise N.1: Solaris 11 Networking Basics" class="md-nav__link">
+    Exercise N.1: Solaris 11 Networking Basics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-n2-network-virtualization" title="Exercise N.2: Network Virtualization" class="md-nav__link">
+    Exercise N.2: Network Virtualization
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="oracle-solaris-11-networking-lab">Oracle Solaris 11 Networking Lab</h1>
+<p>In Solaris 11 several new networking commands were added, some
+management practices have changed to make network administration easier
+and more robust. In this lab we will learn some new networking commands,
+compare them to the old ones and also work with network virtualization
+features, which are brand new in Solaris 11.</p>
+<h2 id="exercise-n1-solaris-11-networking-basics">Exercise N.1: Solaris 11 Networking Basics</h2>
+<p><strong>Task:</strong> You have to configure network interfaces and network services
+(DNS) in Solaris.</p>
+<p><strong>Lab:</strong> We have configured our Solaris virtual machine initially to use
+Automatic network configuration. That means that it was configured using
+VirtualBox's internal DHCP server. In real life usually it's not the
+case. Usually you configure your Solaris servers using manual mode. We
+will learn how to do that. We will study the default IP and DNS
+configuration and then use it in the manual mode. We will use a new
+feature called Vanity Naming which allows you to give network interfaces
+any names you want. Note that when we use these new Solaris 11 commands,
+all the changes are persistent and will sustain a reboot.</p>
+<p>We assume that you have used the 'Automatic' network option mode during
+the initial system configuration for your virtual machine. You have
+recieved your network configuration from the VirtualBox's internal DHCP
+server. Check if you can access the Internet:</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> ping oracle.com
+<span class="go">oracle.com is alive</span>
+</pre></div>
+
+
+<p>If you are behind a firewall, most likely you will not be able to ping
+the outside network. If this is the case, try to ping one of your
+internal sites (e.g. your internal DNS server). Or, try <code>ping 10.0.2.2</code>.
+It's the address of your host machine as seen from inside the VM.</p>
+<p>Check your current configuration and record it to use in the future,
+when we switch to the manual mode. Enter the following commands and
+observe the results.</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> dladm show-link
+<span class="gp">root@solaris:~#</span> dladm show-phys
+<span class="gp">root@solaris:~#</span> dladm show-ether
+</pre></div>
+
+
+<p>What did you learn from those commands? That you have one physical
+Ethernet interface, with the name <code>net0</code>, using device <code>e1000g0</code>, with
+nominal speed 1Gbps. Big change in Solaris 11: all network interfaces by
+default now have unified generic names like <code>net0</code>, <code>net1</code> etc. More than
+that: you can even use your own names for network interfaces! More about
+this later.</p>
+<p>This is our datalink level inventory. Let's move up, on the IP level.
+Enter the following commands to figure out your current IP
+configuration.</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> ipadm 
+<span class="go">NAME              CLASS/TYPE STATE        UNDER      ADDR</span>
+<span class="go">lo0               loopback   ok           --         --</span>
+<span class="go">lo0/v4         static     ok           --         127.0.0.1/8</span>
+<span class="go">lo0/v6         static     ok           --         ::1/128</span>
+<span class="go">net0              ip         ok           --         --</span>
+<span class="go">net0/v4        dhcp       ok           --         10.0.2.15/24</span>
+<span class="go">net0/v6        addrconf   ok           --         fe80::a00:27ff:fec0:3b0a/10</span>
+</pre></div>
+
+
+<p>OK, we've got the usual loopback interface and the <code>net0</code> interface with
+IP address <code>10.0.2.15/24</code> which was assigned by the DHCP server. Let's
+take a more detailed look at <code>net0</code>.</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> ipadm show-ifprop net0
+<span class="go">IFNAME      PROPERTY        PROTO PERM CURRENT    PERSISTENT DEFAULT    POSSIBLE</span>
+<span class="go">net0        arp             ipv4  rw   on         --         on         on,off</span>
+<span class="go">net0        forwarding      ipv4  rw   off        --         off        on,off</span>
+<span class="go">net0        metric          ipv4  rw   0          --         0          --</span>
+<span class="go">net0        mtu             ipv4  rw   1500       --         1500       68-1500</span>
+<span class="go">net0        exchange_routes ipv4  rw   on         --         on         on,off</span>
+<span class="go">net0        usesrc          ipv4  rw   none       --         none       --</span>
+<span class="go">net0        forwarding      ipv6  rw   off        --         off        on,off</span>
+<span class="go">net0        metric          ipv6  rw   0          --         0          --</span>
+<span class="go">net0        mtu             ipv6  rw   1500       --         1500       1280-1500</span>
+<span class="go">net0        nud             ipv6  rw   on         --         on         on,off</span>
+<span class="go">net0        exchange_routes ipv6  rw   on         --         on         on,off</span>
+<span class="go">net0        usesrc          ipv6  rw   none       --         none       --</span>
+<span class="go">net0        group           ip    rw   --         --         --         --</span>
+<span class="go">net0        standby         ip    rw   off        --         off        on,off</span>
+</pre></div>
+
+
+<p>A lot of information about IP properties of this <code>net0</code> interface. You can
+learn about these network parameters later. Consider that your homework
+assignment. For now let's move on.</p>
+<p>What about routing table and DNS settings? We will need them when
+configuring our interfaces in manual mode.</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> netstat -nr
+
+<span class="go">Routing Table: IPv4</span>
+<span class="go">Destination           Gateway           Flags  Ref     Use     Interface </span>
+<span class="go">-------------------- -------------------- ----- ----- ---------- --------- </span>
+<span class="go">default              10.0.2.2             UG        4       1778 net0      </span>
+<span class="go">10.0.2.0             10.0.2.15            U         3          0 net0      </span>
+<span class="go">127.0.0.1            127.0.0.1            UH        2        796 lo0       </span>
+
+<span class="go">Routing Table: IPv6</span>
+<span class="go">Destination/Mask            Gateway                   Flags Ref   Use    If   </span>
+<span class="go">--------------------------- --------------------------- ----- --- ------- ----- </span>
+<span class="go">::1                         ::1                         UH      2       8 lo0   </span>
+<span class="go">fe80::/10                   fe80::a00:27ff:fec0:3b0a    U       2       0 net0  </span>
+
+<span class="gp">root@solaris:~#</span> cat /etc/resolv.conf
+
+<span class="gp">#</span>
+<span class="gp">#</span> _AUTOGENERATED_FROM_SMF_V1_
+<span class="gp">#</span>
+<span class="gp">#</span> WARNING: THIS FILE GENERATED FROM SMF DATA.
+<span class="gp">#</span>   DO NOT EDIT THIS FILE.  EDITS WILL BE LOST.
+<span class="gp">#</span> See resolv.conf<span class="o">(</span><span class="m">4</span><span class="o">)</span> <span class="k">for</span> details.
+
+<span class="go">nameserver  192.168.1.1</span>
+</pre></div>
+
+
+<p>Note the warning in the <code>resolv.conf</code> file. There are some changes in
+DNS configuration in Solaris 11, we'll talk about them later. Now, just
+write down your default router IP address (<code>10.0.2.2</code> in case of
+VirtualBox installation) and your DNS server address(es) (most likely,
+yours are different from <code>192.168.1.1</code>).</p>
+<p>Now, we are ready to change network management to the manual mode:</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> netadm <span class="nb">enable</span> -p ncp DefaultFixed
+</pre></div>
+
+
+<p>Check again if you can access the Internet (again, replace <code>oracle.com</code>
+with one of your internal hosts if you are behind a firewall):</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> ping oracle.com
+<span class="go">ping: unknown host oracle.com</span>
+</pre></div>
+
+
+<p>Most likely, the reason for this error message is that we can't access
+any DNS servers or they are not configured at all. Check the DNS
+server's IP address (replace <code>192.168.1.1</code> with what you have recorded
+while in Automatic mode):</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> ping <span class="m">192</span>.168.1.1
+<span class="go">ping: sendto No route to host</span>
+</pre></div>
+
+
+<p>Routing is not configured. OK, the default gateway was <code>10.0.2.2</code>
+(internal VirtualBox address). Let's try it:</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> ping <span class="m">10</span>.0.2.2
+<span class="go">ping: sendto No route to host</span>
+</pre></div>
+
+
+<p>Nothing works! Let's start from the beginning. Check if the same
+physical links are available:</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> dladm show-phys
+<span class="go">LINK              MEDIA                STATE      SPEED  DUPLEX    DEVICE</span>
+<span class="go">net0              Ethernet             unknown    1000   full      e1000g0</span>
+</pre></div>
+
+
+<p>OK, physical link is in place. What about IP links?</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> ipadm 
+<span class="go">NAME              CLASS/TYPE STATE        UNDER      ADDR</span>
+<span class="go">lo0               loopback   ok           --         --</span>
+<span class="go">lo0/v4         static     ok           --         127.0.0.1/8</span>
+<span class="go">lo0/v6         static     ok           --         ::1/128</span>
+</pre></div>
+
+
+<p>Only loopback is available. Time to create an IP link from scratch:</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> ipadm create-ip net0
+<span class="gp">root@solaris:~#</span> ipadm
+<span class="go">NAME              CLASS/TYPE STATE        UNDER      ADDR</span>
+<span class="go">lo0               loopback   ok           --         --</span>
+<span class="go">lo0/v4         static     ok           --         127.0.0.1/8</span>
+<span class="go">lo0/v6         static     ok           --         ::1/128</span>
+<span class="go">net0              ip         down         --         --</span>
+</pre></div>
+
+
+<p>IP link is there, but there is no IP address assigned to it. Let's fix
+that.</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> ipadm create-addr -a <span class="m">10</span>.0.2.15/24 net0
+<span class="go">net0/v4</span>
+<span class="gp">root@solaris:~#</span> ipadm 
+<span class="go">NAME              CLASS/TYPE STATE        UNDER      ADDR</span>
+<span class="go">lo0               loopback   ok           --         --</span>
+<span class="go">lo0/v4         static     ok           --         127.0.0.1/8</span>
+<span class="go">lo0/v6         static     ok           --         ::1/128</span>
+<span class="go">net0              ip         ok           --         --</span>
+<span class="go">net0/addr      static     ok           --         10.0.2.15/24</span>
+</pre></div>
+
+
+<p>Much better. Try pinging some addresses:</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> ping oracle.com
+<span class="go">ping: unknown host oracle.com</span>
+<span class="gp">root@solaris:~#</span> ping <span class="m">10</span>.0.2.2
+<span class="go">10.0.2.2 is alive</span>
+</pre></div>
+
+
+<p>First ping failure tells us that most likely DNS is not avalable. Second
+ping shows that we can at least access our default gateway. Let's
+continue moving further and ping our DNS server.</p>
+<p>Ping the network again:</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> ping <span class="m">192</span>.168.1.1 <span class="o">(</span>replace <span class="m">192</span>.168.1.1 with your DNS server IP address<span class="o">)</span>
+<span class="go">ping: sendto No route to host</span>
+</pre></div>
+
+
+<p>Routing is not configured. Check:</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> netstat -nr
+
+<span class="go">Routing Table: IPv4</span>
+<span class="go">Destination           Gateway           Flags  Ref     Use     Interface </span>
+<span class="go">-------------------- -------------------- ----- ----- ---------- --------- </span>
+<span class="go">10.0.2.0             10.0.2.15            U         3          2 net0      </span>
+<span class="go">127.0.0.1            127.0.0.1            UH        2       1214 lo0       </span>
+
+<span class="go">Routing Table: IPv6</span>
+<span class="go">Destination/Mask            Gateway                   Flags Ref   Use    If   </span>
+<span class="go">--------------------------- --------------------------- ----- --- ------- ----- </span>
+<span class="go">::1                         ::1                         UH      2      12 lo0   </span>
+</pre></div>
+
+
+<p>Yes, indeed. There is no default gateway. Add the default gateway and
+check again:</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> route -p add default <span class="m">10</span>.0.2.2
+<span class="go">add net default: gateway 10.0.2.2</span>
+<span class="go">add persistent net default: gateway 10.0.2.2</span>
+<span class="gp">root@solaris:~#</span> ping <span class="m">192</span>.168.1.1 <span class="o">(</span>replace <span class="m">192</span>.168.1.1 with your DNS server IP address<span class="o">)</span>
+<span class="go">192.168.1.1 is alive</span>
+<span class="gp">root@solaris:~#</span> ping oracle.com <span class="o">(</span>replace oracle.com with your internal site<span class="o">)</span>
+<span class="go">ping: unknown host oracle.com</span>
+</pre></div>
+
+
+<p>We can reach our DNS server, but our system is not configured to use it.
+If you think that editing your /etc/resolv.conf is enough, remember the
+warning in that file:</p>
+<div class="codehilite"><pre><span></span>    # WARNING: THIS FILE GENERATED FROM SMF DATA.
+    #   DO NOT EDIT THIS FILE.  EDITS WILL BE LOST.
+</pre></div>
+
+
+<p>That means that in Solaris 11 name service configuration is different
+from what you used before. To use DNS we have to configure the
+<code>dns/client</code> service and also the <code>name-service/switch</code> service which
+used to be configured via <code>/etc/nsswitch.conf</code>. Yes, it's a little bit
+more complicated, but it's more robust and manageable. It's a general
+direction in Solaris: most of the services are configured via SMF
+framework, not via config files. Here are the commands:</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> svccfg -s dns/client <span class="s1">&#39;setprop config/nameserver = net_address: 192.168.1.1&#39;</span>
+<span class="gp">root@solaris:~#</span> svccfg -s dns/client <span class="s1">&#39;setprop config/domain = astring: &quot;example.com&quot; &#39;</span> <span class="o">(</span>replace example.com with your <span class="nb">local</span> default domain name or skip this step<span class="o">)</span>
+<span class="gp">root@solaris:~#</span> svccfg -s name-service/switch <span class="s1">&#39;setprop config/host = astring: &quot;files dns&quot; &#39;</span>
+<span class="gp">root@solaris:~#</span> svcadm refresh name-service/switch
+<span class="gp">root@solaris:~#</span> svcadm refresh dns/client
+</pre></div>
+
+
+<p>Alternatively, you can edit the usual files <code>/etc/resolv.conf</code> and
+<code>/etc/nsswitch.conf</code>, but you have to import them into the naming service
+configuration:</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> nscfg import -f svc:/system/name-service/switch:default
+<span class="gp">root@solaris:~#</span> nscfg import -f svc:/network/dns/client:default
+<span class="gp">root@solaris:~#</span> svcadm refresh dns/client
+</pre></div>
+
+
+<p>Now our ping finally reaches the Internet:</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> ping oracle.com <span class="o">(</span>replace oracle.com with one of your internal hosts<span class="o">)</span>
+<span class="go">oracle.com is alive</span>
+</pre></div>
+
+
+<p><strong>New names.</strong> Do you remember the days when you were a junior Solaris
+system administrator and wondered why all network interfaces in Solaris
+have these funny names? <code>le</code>, <code>bge</code>, <code>ce</code>, <code>xge</code>, <code>e1000g</code>.... Now, as you can
+see, they all are called <code>net0</code>, <code>net1</code>, <code>net2</code>, ... Much simpler, right? Even
+more than that: you can give your interfaces your own names. Here is the
+example. Show what we've got now:</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> dladm
+<span class="gp">root@solaris:~#</span> ipadm
+</pre></div>
+
+
+<p>Imagine we want to use our network interfaces for different services on
+our Solaris box. We have web server, application server etc. We can name
+our network interfaces <code>web1</code>, <code>app0</code>, <code>db1</code> etc. Start by deleting the <code>net0</code>
+IP interface</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> ipadm delete-ip net0
+</pre></div>
+
+
+<p>...now rename the NIC</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> dladm rename-link net0 web1
+<span class="gp">root@solaris:~#</span> dladm 
+</pre></div>
+
+
+<p>Add back in the IP interface and its address:</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> ipadm create-ip web1
+<span class="gp">root@solaris:~#</span> ipadm create-addr -a <span class="m">10</span>.0.2.15/24 web1
+</pre></div>
+
+
+<p>Cleaning up... Undo it all</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> ipadm delete-ip web1
+<span class="gp">root@solaris:~#</span> dladm rename-link web1 net0
+<span class="gp">root@solaris:~#</span> ipadm create-ip net0
+<span class="gp">root@solaris:~#</span> ipadm create-addr -a <span class="m">10</span>.0.2.15/24 net0
+<span class="gp">root@solaris:~#</span> ipadm
+</pre></div>
+
+
+<p>You may need to restart your DNS client service after this exercise:</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> svcadm disable dns/client
+<span class="gp">root@solaris:~#</span> svcadm <span class="nb">enable</span> dns/client
+</pre></div>
+
+
+<p>One word of advice: having this kind of freedom, please try to avoid
+long discussions about network interface naming, similar to what you
+have already had regarding host naming policies. :-)</p>
+<h2 id="exercise-n2-network-virtualization">Exercise N.2: Network Virtualization</h2>
+<p><strong>Task:</strong> You want to create Virtual Network Interface Cards (VNICs) to
+use them with your Zones. You want to build and manage your
+application's network infrastructure completely inside the box for
+development and testing purposes.</p>
+<p><strong>Lab:</strong> We will create VNICs, assign IP addresses to them and learn how
+to limit bandwidth on them.</p>
+<p>First we show the links. Links can be physical or virtual. Note that for
+physical NICs, we use a new naming scheme <code>net0</code>, <code>net1</code>, etc. that hides
+the actual device name.</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> dladm show-link
+</pre></div>
+
+
+<p>Show only the physical ethernet NICs:</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> dladm show-ether
+</pre></div>
+
+
+<p>And to see the actual hardware devices used for the netX NICs:</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> dladm show-phys
+</pre></div>
+
+
+<p>The next command shows a bit more information like the physical
+location:</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> dladm show-phys -L
+</pre></div>
+
+
+<p>So now we create a VNIC that we call vnic1, using <code>net0</code> as its
+underlying datalink. Note that VNICs are first-class NICs in terms of
+visibility (e.g. <code>snoop</code>)</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> dladm create-vnic -l net0 vnic1
+</pre></div>
+
+
+<p>Show the VNICs:</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> dladm show-vnic
+</pre></div>
+
+
+<p>We can easily limit bandwith on a VNIC:</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> dladm set-linkprop -p <span class="nv">maxbw</span><span class="o">=</span><span class="m">40</span> vnic1
+<span class="gp">root@solaris:~#</span> dladm show-vnic
+</pre></div>
+
+
+<p>Now we create an IP interface. This is analgous to plumbing the
+interface:</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> ipadm create-ip vnic1
+</pre></div>
+
+
+<p>Now we assign a persistent IP address to the VNIC:</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> ipadm create-addr -a <span class="m">10</span>.2.3.4/24 vnic1
+</pre></div>
+
+
+<p>Ping the VNIC:</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> ping <span class="m">10</span>.2.3.4
+</pre></div>
+
+
+<p>Show all available datalinks, both physical and virtual</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> dladm show-link
+</pre></div>
+
+
+<p>Finally list all IP addresses:</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> ipadm show-addr
+</pre></div>
+
+
+<p>Now we tear down what we've just created:</p>
+<div class="codehilite"><pre><span></span><span class="gp">root@solaris:~#</span> ipadm delete-addr vnic1/v4
+<span class="gp">root@solaris:~#</span> ipadm delete-ip vnic1
+<span class="gp">root@solaris:~#</span> dladm delete-vnic vnic1
+<span class="gp">root@solaris:~#</span> dladm show-link
+</pre></div>
+
+
+<p>Now you see how new networking commands work. Of course, you can still
+use the old-style <code>ifconfig</code>, but the new commands are easier to use
+and, most importantly, they make presistent changes.</p>
+<p>Find more food for thought and inspiration here:</p>
+<ul>
+<li>Strategies for Network Administration in Oracle Solaris 11.2<br />
+<a href="http://docs.oracle.com/cd/E36784_01/html/E37473/index.html">http://docs.oracle.com/cd/E36784_01/html/E37473/index.html</a>  </li>
+<li>How to get started configuring your network in Oracle Solaris 11<br />
+<a href="http://www.oracle.com/technetwork/articles/servers-storage-dev/s11-network-config-1632927.html">http://www.oracle.com/technetwork/articles/servers-storage-dev/s11-network-config-1632927.html</a>  </li>
+<li>How to Script Oracle Solaris 11 Zones Creation for a Network-In-a-Box Configuration<br />
+<a href="http://www.oracle.com/technetwork/articles/servers-storage-admin/o11-118-s11-script-zones-524499.html">http://www.oracle.com/technetwork/articles/servers-storage-admin/o11-118-s11-script-zones-524499.html</a>  </li>
+<li>How to Restrict Your Application Traffic Using Oracle Solaris 11<br />
+    Network Virtualization and Resource Management<br />
+<a href="http://www.oracle.com/technetwork/articles/servers-storage-admin/o11-095-s11-app-traffic-525038.html">http://www.oracle.com/technetwork/articles/servers-storage-admin/o11-095-s11-app-traffic-525038.html</a></li>
+</ul>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../ips/ips_dev/" title="IPS for Developers" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                IPS for Developers
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../virt/virt_pre/" title="Virtualization Lab Prerequisites" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Virtualization Lab Prerequisites
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Oracle Corp., 2011-2017
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application-3964c0cb56.js"></script>
+      <script>app.initialize({url:{base:"../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>
