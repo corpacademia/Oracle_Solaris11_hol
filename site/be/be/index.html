@@ -1,0 +1,1031 @@
+
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Pavel Anni <pavel.anni@oracle.com>">
+      
+      
+        <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      
+      <meta name="generator" content="mkdocs-0.16.2, mkdocs-material-1.4.1">
+    
+    
+      
+        <title>Boot Environments - Oracle Solaris 11 Hands-on Labs</title>
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr-56ade86843.js"></script>
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application-76741b64bc.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-66fa0d9bba.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="red" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <a href="../../index.html" title="Oracle Solaris 11 Hands-on Labs" class="md-icon md-icon--home md-header-nav__button">
+          </a>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+            
+            Boot Environments
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search">
+  <div class="md-search__overlay"></div>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <div class="md-header-nav__source">
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    
+      <i class="md-icon md-icon--home md-nav__button"></i>
+    
+    Oracle Solaris 11 Hands-on Labs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../index.html" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      ZFS
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        ZFS
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs/index.html" title="ZFS Intro" class="md-nav__link">
+      ZFS Intro
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_pools/index.html" title="ZFS Pools" class="md-nav__link">
+      ZFS Pools
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_fs/index.html" title="ZFS File Systems" class="md-nav__link">
+      ZFS File Systems
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_compress/index.html" title="ZFS Compression" class="md-nav__link">
+      ZFS Compression
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_dedup/index.html" title="ZFS Deduplication:" class="md-nav__link">
+      ZFS Deduplication:
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_snap/index.html" title="ZFS Snapshops" class="md-nav__link">
+      ZFS Snapshops
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_clones/index.html" title="ZFS Clones" class="md-nav__link">
+      ZFS Clones
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_rights/index.html" title="ZFS Rights Delegation" class="md-nav__link">
+      ZFS Rights Delegation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_backup/index.html" title="ZFS Backup and Restore" class="md-nav__link">
+      ZFS Backup and Restore
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_free/index.html" title="ZFS Free Space" class="md-nav__link">
+      ZFS Free Space
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_reservations/index.html" title="ZFS Reservations" class="md-nav__link">
+      ZFS Reservations
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_shadow/index.html" title="ZFS Shadow Migration" class="md-nav__link">
+      ZFS Shadow Migration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_cleanup/index.html" title="Lab Cleanup" class="md-nav__link">
+      Lab Cleanup
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Boot Environments
+      </label>
+    
+    <a href="index.html" title="Boot Environments" class="md-nav__link md-nav__link--active">
+      Boot Environments
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#boot-environments-intro" title="Boot Environments Intro" class="md-nav__link">
+    Boot Environments Intro
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protection-from-human-errors" title="Protection from Human Errors" class="md-nav__link">
+    Protection from Human Errors
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Image Packaging System
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Image Packaging System
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ips/ips/index.html" title="IPS Intro" class="md-nav__link">
+      IPS Intro
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ips/ips_repo/index.html" title="IPS Lab Preparation" class="md-nav__link">
+      IPS Lab Preparation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ips/ips_install/index.html" title="IPS Package Installation" class="md-nav__link">
+      IPS Package Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ips/ips_verify/index.html" title="IPS Package Verification" class="md-nav__link">
+      IPS Package Verification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ips/ips_be/index.html" title="IPS and Boot Environments" class="md-nav__link">
+      IPS and Boot Environments
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ips/ips_dev/index.html" title="IPS for Developers" class="md-nav__link">
+      IPS for Developers
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../net/net/index.html" title="Networking" class="md-nav__link">
+      Networking
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Virtualization
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Virtualization
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../virt/virt_pre/index.html" title="Virtualization Lab Prerequisites" class="md-nav__link">
+      Virtualization Lab Prerequisites
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../virt/zone_install/index.html" title="Zone Installation" class="md-nav__link">
+      Zone Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../virt/zone_inside/index.html" title="Inside the Zone" class="md-nav__link">
+      Inside the Zone
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../virt/zone_cloning/index.html" title="Zone Cloning" class="md-nav__link">
+      Zone Cloning
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../virt/zone_monitoring/index.html" title="Zone Monitoring" class="md-nav__link">
+      Zone Monitoring
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../virt/zone_resource/index.html" title="Zone Resource Management" class="md-nav__link">
+      Zone Resource Management
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Automated Installer
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Automated Installer
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ai_intro/index.html" title="Automated Installer Intro" class="md-nav__link">
+      Automated Installer Intro
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ai_simple/index.html" title="Simple Installation" class="md-nav__link">
+      Simple Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ai_another_ver/index.html" title="Another Version of Oracle Solaris" class="md-nav__link">
+      Another Version of Oracle Solaris
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ai_packages/index.html" title="Different Set of Packages" class="md-nav__link">
+      Different Set of Packages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ai_profiles/index.html" title="System Configuration Profiles" class="md-nav__link">
+      System Configuration Profiles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ai_zones/index.html" title="Zone Installation with AI" class="md-nav__link">
+      Zone Installation with AI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ai_os_clients/index.html" title="Different OS Versions on Clients" class="md-nav__link">
+      Different OS Versions on Clients
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ai_uar/index.html" title="Installing from Unified Archives" class="md-nav__link">
+      Installing from Unified Archives
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/ai_summary/index.html" title="AI Lab Summary" class="md-nav__link">
+      AI Lab Summary
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Kernel Zones
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Kernel Zones
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kz/kz/index.html" title="Kernel Zones Intro" class="md-nav__link">
+      Kernel Zones Intro
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kz/kz_basic/index.html" title="Basic Configuration and Installation" class="md-nav__link">
+      Basic Configuration and Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kz/inside_outside/index.html" title="Solaris Zones Inside and Outside" class="md-nav__link">
+      Solaris Zones Inside and Outside
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kz/kz_suspend/index.html" title="Kernel Zones Suspend and Resume" class="md-nav__link">
+      Kernel Zones Suspend and Resume
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kz/kz_clone/index.html" title="Kernel Zone Cloning" class="md-nav__link">
+      Kernel Zone Cloning
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#boot-environments-intro" title="Boot Environments Intro" class="md-nav__link">
+    Boot Environments Intro
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protection-from-human-errors" title="Protection from Human Errors" class="md-nav__link">
+    Protection from Human Errors
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Boot Environments</h1>
+                
+                <h2 id="boot-environments-intro">Boot Environments Intro</h2>
+<p>Boot Environments feature helps you to have several separate environments with different Solaris versions (e.g. 11.2.7, 11.3.12. etc.), different package versions, different system configurations. Typically they are used to update Solaris systems (most of the work is done by IPS behind the scenes, but you can learn the mechanics of the process in the <a href="../../ips/ips/index.html">IPS Lab</a>.</p>
+<p>Boot environments use ZFS snapshot/clone technology so they can be created quickly and they don't consume storage space until you make changes. You can have as many Boot Environments as you want and keep different system configurations in them. By default, every time you update Solaris OS, a new boot environment is created (you can specify its name).  </p>
+<h2 id="protection-from-human-errors">Protection from Human Errors</h2>
+<p><strong>Task:</strong> You want to make updates to your system, but you want to be
+able to return back to the previous state.</p>
+<p><strong>Lab:</strong> We will use a Solaris 11 feature called Boot Environments.
+We'll create an extra boot environment as a backup (think saving your
+state in a shooting game). Then we'll make some fatal mistakes which
+make our system unbootable. After we failed to boot our default boot
+environment, we'll boot into the backup BE.</p>
+<p>The only command you want to know to work with Boot Environments is
+<code>beadm(1M)</code>. Start with showing all boot environments in the system:</p>
+<pre class="codehilite"><code class="language-console linenums">root@solaris:~# beadm list
+BE      Active Mountpoint Space Policy Created          
+--      ------ ---------- ----- ------ -------          
+solaris NR     /          6.87G static 2011-11-14 13:13 </code></pre>
+
+<p>Create a new boot environment:</p>
+<pre class="codehilite"><code class="language-console linenums">root@solaris:~# beadm create solaris-backup</code></pre>
+
+<p>Check the status again:</p>
+<pre class="codehilite"><code class="language-console linenums">root@solaris:~# beadm list
+BE          Active Mountpoint Space   Policy Created          
+--          ------ ---------- -----   ------ -------          
+solaris       NR    /          7.13G  static 2011-11-14 13:13 
+solaris-backup      -        126.14M  static 2011-11-15 11:09 </code></pre>
+
+<p>Now pretend you are making some changes in the system configuration,
+creating and removing directories, and... Somebody has distracted you
+and instead of removing a temporary directory, you have typed:</p>
+<pre class="codehilite"><code class="language-console linenums">root@solaris:~# rm -rf /usr </code></pre>
+
+<p>What??? You just have destroyed the whole <code>/usr</code> directory! You have
+killed your system! Try <code>ls</code> or <code>ps</code> or any normal command. What do
+you see? Even if you try to reboot your system using <code>init 6</code>, the
+result is the same: <code>Command not found</code>. Try to "Power Off" your virtual
+machine and reboot it&mdash;you'll see it won't boot. Don't wait too long,
+3&ndash;5 minutes is enough to be sure that it doesn't boot. Hint: While
+waiting for the system to reboot, press the <kbd>ESC</kbd> key to see the error
+messages.</p>
+<p>No worries! We have a backup! And you don't have to go and find the
+backup tape in your fireproof cabinet, go through all the hassles of
+restoring the unbootable system... Just when your VirtualBox VM shows
+you the GRUB menu, choose the <code>solaris-backup</code> item instead of the
+<code>Oracle Solaris 11.3</code> which is the default.</p>
+<div class="admonition note">
+<p class="admonition-title">SPARC version<p>If you are using a SPARC system for this lab (for
+example, in Oracle Solutions Center we use logical domains for that)
+then you need console access to be able to choose a different Boot
+Environment. In the case of LDoms, you have to login in the Control
+Domain and stop your guest domain with <code>ldm stop lab0</code> (or whatever
+domain name you are using). Then make sure the domain will not
+auto-boot: <code>ldm set-var auto-boot\?=false lab0</code> and start the domain
+again: <code>ldm start lab0</code>. Now you can access the domain's console via
+<code>telnet localhost 5000</code>. You will see the familiar <code>ok</code> prompt. Then
+use <code>boot -L</code> to list existing Boot Environments.</p>
+<pre class="codehilite"><code class="language-console linenums">{0} ok boot -L
+Boot device: /virtual-devices@100/channel-devices@200/disk@0:a  File and args: -L
+1 solaris
+2 solaris-backup
+Select environment to boot: [ 1 - 2 ]: 2
+
+To boot the selected entry, invoke:
+boot [] -Z rpool/ROOT/solaris-backup
+
+Program terminated
+{0} ok boot -Z rpool/ROOT/solaris-backup</code></pre>
+
+</p>
+</div>
+<p>It boots again! What a relief!</p>
+<p>What now? List your boot environments again:</p>
+<pre class="codehilite"><code class="language-console linenums">root@solaris:~# beadm list
+BE          Active Mountpoint Space   Policy Created          
+--          ------ ---------- -----   ------ -------          
+solaris        R    /          7.13G  static 2011-11-14 13:13 
+solaris-backup N      -        126.14M  static 2011-11-15 11:09 </code></pre>
+
+<p>What does it mean? It means that you are now running <code>solaris-backup</code>
+boot environment, but at the next reboot the system will try to boot the
+<code>solaris</code> boot environment, which is corrupted. Let's fix that. The plan
+is: activate your current BE, delete the <code>solaris</code> BE (as it's corrupted
+anyway), create a new <code>solaris</code> BE and activate it.</p>
+<pre class="codehilite"><code class="language-console linenums">root@solaris:~# beadm activate solaris-backup
+root@solaris:~# beadm destroy solaris
+root@solaris:~# beadm create solaris
+root@solaris:~# beadm activate solaris</code></pre>
+
+<p>Check your work:</p>
+<pre class="codehilite"><code class="language-console linenums">root@solaris:~# beadm list
+BE             Active Mountpoint Space  Policy Created          
+--             ------ ---------- -----  ------ -------          
+solaris        R      -          6.05G  static 2012-11-14 16:35 
+solaris-backup N      /          275.5K static 2012-11-14 16:22 </code></pre>
+
+<p>Now you've got everything back. You can safely reboot into <code>solaris</code> BE
+or you can continue working in <code>solaris-backup</code> until next reboot.</p>
+<p>Boot Environments have many applications: you can update your system,
+installing packages into inactive boot environment; create boot
+environment snapshots etc. We leave it for your homework.</p>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../zfs/zfs_cleanup/index.html" title="Lab Cleanup" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Lab Cleanup
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../ips/ips/index.html" title="IPS Intro" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                IPS Intro
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Oracle Corp., 2011-2017
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application-3964c0cb56.js"></script>
+      <script>app.initialize({url:{base:"../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

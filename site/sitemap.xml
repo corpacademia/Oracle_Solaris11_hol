@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    
+    <url>
+     <loc>/index.html</loc>
+     <lastmod>2017-03-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+        
+    <url>
+     <loc>/zfs/zfs/index.html</loc>
+     <lastmod>2017-03-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/zfs/zfs_pools/index.html</loc>
+     <lastmod>2017-03-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/zfs/zfs_fs/index.html</loc>
+     <lastmod>2017-03-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/zfs/zfs_compress/index.html</loc>
+     <lastmod>2017-03-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/zfs/zfs_dedup/index.html</loc>
+     <lastmod>2017-03-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/zfs/zfs_snap/index.html</loc>
+     <lastmod>2017-03-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/zfs/zfs_clones/index.html</loc>
+     <lastmod>2017-03-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/zfs/zfs_rights/index.html</loc>
+     <lastmod>2017-03-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/zfs/zfs_backup/index.html</loc>
+     <lastmod>2017-03-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/zfs/zfs_free/index.html</loc>
+     <lastmod>2017-03-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/zfs/zfs_reservations/index.html</loc>
+     <lastmod>2017-03-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/zfs/zfs_shadow/index.html</loc>
+     <lastmod>2017-03-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/zfs/zfs_cleanup/index.html</loc>
+     <lastmod>2017-03-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+    <url>
+     <loc>/be/be/index.html</loc>
+     <lastmod>2017-03-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+        
+    <url>
+     <loc>/ips/ips/index.html</loc>
+     <lastmod>2017-03-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/ips/ips_repo/index.html</loc>
+     <lastmod>2017-03-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/ips/ips_install/index.html</loc>
+     <lastmod>2017-03-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/ips/ips_verify/index.html</loc>
+     <lastmod>2017-03-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/ips/ips_be/index.html</loc>
+     <lastmod>2017-03-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/ips/ips_dev/index.html</loc>
+     <lastmod>2017-03-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+    <url>
+     <loc>/net/net/index.html</loc>
+     <lastmod>2017-03-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+        
+    <url>
+     <loc>/virt/virt_pre/index.html</loc>
+     <lastmod>2017-03-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/virt/zone_install/index.html</loc>
+     <lastmod>2017-03-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/virt/zone_inside/index.html</loc>
+     <lastmod>2017-03-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/virt/zone_cloning/index.html</loc>
+     <lastmod>2017-03-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/virt/zone_monitoring/index.html</loc>
+     <lastmod>2017-03-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/virt/zone_resource/index.html</loc>
+     <lastmod>2017-03-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/ai/ai_intro/index.html</loc>
+     <lastmod>2017-03-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/ai/ai_simple/index.html</loc>
+     <lastmod>2017-03-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/ai/ai_another_ver/index.html</loc>
+     <lastmod>2017-03-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/ai/ai_packages/index.html</loc>
+     <lastmod>2017-03-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/ai/ai_profiles/index.html</loc>
+     <lastmod>2017-03-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/ai/ai_zones/index.html</loc>
+     <lastmod>2017-03-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/ai/ai_os_clients/index.html</loc>
+     <lastmod>2017-03-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/ai/ai_uar/index.html</loc>
+     <lastmod>2017-03-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/ai/ai_summary/index.html</loc>
+     <lastmod>2017-03-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/kz/kz/index.html</loc>
+     <lastmod>2017-03-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/kz/kz_basic/index.html</loc>
+     <lastmod>2017-03-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/kz/inside_outside/index.html</loc>
+     <lastmod>2017-03-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/kz/kz_suspend/index.html</loc>
+     <lastmod>2017-03-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/kz/kz_clone/index.html</loc>
+     <lastmod>2017-03-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+</urlset>

@@ -1,0 +1,1081 @@
+
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Pavel Anni <pavel.anni@oracle.com>">
+      
+      
+        <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      
+      <meta name="generator" content="mkdocs-0.16.2, mkdocs-material-1.4.1">
+    
+    
+      
+        <title>Another Version of Oracle Solaris - Oracle Solaris 11 Hands-on Labs</title>
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr-56ade86843.js"></script>
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application-76741b64bc.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-66fa0d9bba.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="red" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <a href="../../index.html" title="Oracle Solaris 11 Hands-on Labs" class="md-icon md-icon--home md-header-nav__button">
+          </a>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  Automated Installer
+                </span>
+              
+            
+            Another Version of Oracle Solaris
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search">
+  <div class="md-search__overlay"></div>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <div class="md-header-nav__source">
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    
+      <i class="md-icon md-icon--home md-nav__button"></i>
+    
+    Oracle Solaris 11 Hands-on Labs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../index.html" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      ZFS
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        ZFS
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs/index.html" title="ZFS Intro" class="md-nav__link">
+      ZFS Intro
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_pools/index.html" title="ZFS Pools" class="md-nav__link">
+      ZFS Pools
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_fs/index.html" title="ZFS File Systems" class="md-nav__link">
+      ZFS File Systems
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_compress/index.html" title="ZFS Compression" class="md-nav__link">
+      ZFS Compression
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_dedup/index.html" title="ZFS Deduplication:" class="md-nav__link">
+      ZFS Deduplication:
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_snap/index.html" title="ZFS Snapshops" class="md-nav__link">
+      ZFS Snapshops
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_clones/index.html" title="ZFS Clones" class="md-nav__link">
+      ZFS Clones
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_rights/index.html" title="ZFS Rights Delegation" class="md-nav__link">
+      ZFS Rights Delegation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_backup/index.html" title="ZFS Backup and Restore" class="md-nav__link">
+      ZFS Backup and Restore
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_free/index.html" title="ZFS Free Space" class="md-nav__link">
+      ZFS Free Space
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_reservations/index.html" title="ZFS Reservations" class="md-nav__link">
+      ZFS Reservations
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_shadow/index.html" title="ZFS Shadow Migration" class="md-nav__link">
+      ZFS Shadow Migration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../zfs/zfs_cleanup/index.html" title="Lab Cleanup" class="md-nav__link">
+      Lab Cleanup
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../be/be/index.html" title="Boot Environments" class="md-nav__link">
+      Boot Environments
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Image Packaging System
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Image Packaging System
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ips/ips/index.html" title="IPS Intro" class="md-nav__link">
+      IPS Intro
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ips/ips_repo/index.html" title="IPS Lab Preparation" class="md-nav__link">
+      IPS Lab Preparation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ips/ips_install/index.html" title="IPS Package Installation" class="md-nav__link">
+      IPS Package Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ips/ips_verify/index.html" title="IPS Package Verification" class="md-nav__link">
+      IPS Package Verification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ips/ips_be/index.html" title="IPS and Boot Environments" class="md-nav__link">
+      IPS and Boot Environments
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ips/ips_dev/index.html" title="IPS for Developers" class="md-nav__link">
+      IPS for Developers
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../net/net/index.html" title="Networking" class="md-nav__link">
+      Networking
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Virtualization
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Virtualization
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../virt/virt_pre/index.html" title="Virtualization Lab Prerequisites" class="md-nav__link">
+      Virtualization Lab Prerequisites
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../virt/zone_install/index.html" title="Zone Installation" class="md-nav__link">
+      Zone Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../virt/zone_inside/index.html" title="Inside the Zone" class="md-nav__link">
+      Inside the Zone
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../virt/zone_cloning/index.html" title="Zone Cloning" class="md-nav__link">
+      Zone Cloning
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../virt/zone_monitoring/index.html" title="Zone Monitoring" class="md-nav__link">
+      Zone Monitoring
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../virt/zone_resource/index.html" title="Zone Resource Management" class="md-nav__link">
+      Zone Resource Management
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
+    
+    <label class="md-nav__link" for="nav-7">
+      Automated Installer
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Automated Installer
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ai_intro/index.html" title="Automated Installer Intro" class="md-nav__link">
+      Automated Installer Intro
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ai_simple/index.html" title="Simple Installation" class="md-nav__link">
+      Simple Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+    <a href="index.html" title="Another Version of Oracle Solaris" class="md-nav__link md-nav__link--active">
+      Another Version of Oracle Solaris
+    </a>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ai_packages/index.html" title="Different Set of Packages" class="md-nav__link">
+      Different Set of Packages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ai_profiles/index.html" title="System Configuration Profiles" class="md-nav__link">
+      System Configuration Profiles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ai_zones/index.html" title="Zone Installation with AI" class="md-nav__link">
+      Zone Installation with AI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ai_os_clients/index.html" title="Different OS Versions on Clients" class="md-nav__link">
+      Different OS Versions on Clients
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ai_uar/index.html" title="Installing from Unified Archives" class="md-nav__link">
+      Installing from Unified Archives
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ai_summary/index.html" title="AI Lab Summary" class="md-nav__link">
+      AI Lab Summary
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Kernel Zones
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Kernel Zones
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kz/kz/index.html" title="Kernel Zones Intro" class="md-nav__link">
+      Kernel Zones Intro
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kz/kz_basic/index.html" title="Basic Configuration and Installation" class="md-nav__link">
+      Basic Configuration and Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kz/inside_outside/index.html" title="Solaris Zones Inside and Outside" class="md-nav__link">
+      Solaris Zones Inside and Outside
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kz/kz_suspend/index.html" title="Kernel Zones Suspend and Resume" class="md-nav__link">
+      Kernel Zones Suspend and Resume
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kz/kz_clone/index.html" title="Kernel Zone Cloning" class="md-nav__link">
+      Kernel Zone Cloning
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Another Version of Oracle Solaris</h1>
+                
+                <p>Of course, there are situations when you want to install a different
+version of Oracle Solaris. For instance, in our lab repository we have
+versions 11 Express, 11.0, 11.1, 11.2 with their support SRUs. How can
+we specify a different version for installation?</p>
+<p>In this case we have to create a separate install service. So, the more
+different versions and CPU architectures you want to install, the more
+install services you have. Let's figure out what's available. We list 10
+most recent updates here:</p>
+<pre class="codehilite"><code class="language-console linenums">root@solarislab:~# pkg list -avf  install-image/solaris-auto-install | head    
+FMRI                                                                                        IFO
+pkg://solaris/install-image/solaris-auto-install@5.11,5.11-0.175.3.0.0.29.1:20150817T163032Z ---
+pkg://solaris/install-image/solaris-auto-install@5.11,5.11-0.175.3.0.0.28.0:20150803T161232Z ---
+pkg://solaris/install-image/solaris-auto-install@5.11,5.11-0.175.2.14.0.5.0:20150910T165659Z ---
+pkg://solaris/install-image/solaris-auto-install@5.11,5.11-0.175.2.13.0.6.0:20150810T175313Z ---
+pkg://solaris/install-image/solaris-auto-install@5.11,5.11-0.175.2.12.0.6.0:20150715T155314Z ---
+pkg://solaris/install-image/solaris-auto-install@5.11,5.11-0.175.2.12.0.5.0:20150701T004857Z ---
+pkg://solaris/install-image/solaris-auto-install@5.11,5.11-0.175.2.11.0.5.0:20150610T201614Z ---
+pkg://solaris/install-image/solaris-auto-install@5.11,5.11-0.175.2.10.0.5.0:20150506T023353Z ---
+pkg://solaris/install-image/solaris-auto-install@5.11,5.11-0.175.2.9.0.5.0:20150404T222307Z ---</code></pre>
+
+<p>Here we use <code>-v</code> option here to print full FMRIs (Fault Managed Resource
+Indicator) for packages: we will need it later.</p>
+<p>Well, we already have created an install service for Solaris 11.3, now
+let's create another one for Solaris 11.2, SRU 11, for example.</p>
+<pre class="codehilite"><code class="language-console linenums">root@solarislab:~# installadm create-service -s pkg://solaris/install-image/solaris-auto-install@5.11,5.11-0.175.2.11.0.5.0
+OK to use subdir of /export/auto_install to store image? [y|N]: y
+  0% : Service svc:/network/dns/multicast:default is not online.  Installation services will not be advertised via multicast DNS.
+  0% : Creating service from: pkg://solaris/install-image/solaris-auto-install@5.11,5.11-0.175.2.11.0.5.0
+  0% : Using publisher(s):
+  0% :     solaris: http://10.80.11.34:81/
+  5% : Refreshing Publisher(s)
+ 15% : Planning Phase
+ 24% : Download Phase
+ 62% : Actions Phase
+ 91% : Finalize Phase
+ 91% : Creating sparc service: solaris11_2_11_5_0-sparc
+ 91% : Image path: /export/auto_install/solaris11_2_11_5_0-sparc
+ 91% : Setting &quot;solaris&quot; publisher URL in default manifest to:
+ 91% :  http://10.80.11.34:81/
+100% : Created Service: 'solaris11_2_11_5_0-sparc'
+100% : Refreshing SMF service svc:/system/install/server:default
+100% : Warning: mDNS registry of service 'solaris11_2_11_5_0-sparc' could not be verified.</code></pre>
+
+<p>OK, done. Now let's make it the default SPARC service.</p>
+<pre class="codehilite"><code class="language-console linenums">root@solarislab:~# installadm delete-service -n default-sparc
+WARNING: The service you are deleting, or a dependent alias, is the
+alias for the default sparc service. Without the 'default-sparc'
+service, sparc clients will fail to boot unless explicitly assigned to
+a service using the create-client subcommand.
+Are you sure you want to delete this alias? [y|N]: y
+Warning: mDNS registry of service default-sparc could not be verified.
+Deleted Service: 'default-sparc'
+root@solarislab:~# installadm create-service -t solaris11_2_11_5_0-sparc -n default-sparc
+  0% : Service svc:/network/dns/multicast:default is not online.  Installation services will not be advertised via multicast DNS.
+  0% : Creating sparc alias: default-sparc
+  0% : Setting &quot;solaris&quot; publisher URL in default manifest to:
+  0% :  http://10.80.11.34:81/
+100% : Created Service: 'default-sparc'
+100% : Refreshing SMF service svc:/system/install/server:default
+100% : Enabling SMF service svc:/network/dhcp/server:ipv4
+100% : Warning: mDNS registry of service 'default-sparc' could not be verified.
+root@solarislab:~# svcadm disable dhcp/server:ipv4</code></pre>
+
+<p>And now you can try to install the same client again to check if this
+service installs the version we have created it with, namely, Solaris
+11.2.11.</p>
+<p><strong>Spoiler Alert:</strong> We can already tell you what is going to happen
+during this test install. If you want to learn it yourself, go ahead and
+install the <code>ai-client</code> LDom again using the instructions above and then
+check what Solaris version was installed with <code>pkg list entire</code>. For
+those of you who want to save time and skip this test installation step,
+here is what's going to happen:</p>
+<p>The client system will boot from the install image, which is <code>11.2.11</code>,
+but it will install the latest available Solaris SRU, which is <code>11.2.14</code>
+in our default repository. Why so? Because it uses the default manifest
+and by default it installs the latest SRU available. If we want to
+install that particular SRU, we have to create a new manifest. It's time
+to learn about AI manifests.</p>
+<p>First, let's see what we've got already:</p>
+<pre class="codehilite"><code class="language-console linenums">root@solarislab:~# installadm list -m
+Service Name             Manifest Name Type    Status  Criteria
+------------             ------------- ----    ------  --------
+default-sparc            orig_default  derived default none
+solaris11_2_11_5_0-sparc orig_default  derived default none
+solaris11_3-sparc        orig_default  derived default none</code></pre>
+
+<p>Note that we have two services (one per each Solaris update version)
+plus one alias. Each service has one default manifest. Our plan is to
+modify the default manifest and add it to the default service. First, we
+copy the manifest XML file from its default location to the home
+directory (actually, it can be any directory).</p>
+<pre class="codehilite"><code class="language-console linenums">root@solarislab:~# cp /usr/share/auto_install/manifest/default.xml s11.2.11-manifest.xml</code></pre>
+
+<p>Now we can edit this copy. So we want to specify which SRU we are going
+to install. Let's list what's available.</p>
+<pre class="codehilite"><code class="language-console linenums">root@solarislab:~# pkg list -af entire | head
+NAME (PUBLISHER)                                  VERSION                    IFO
+entire                                            0.5.11-0.175.3.0.0.29.0    ---
+entire                                            0.5.11-0.175.3.0.0.28.0    ---
+entire                                            0.5.11-0.175.2.14.0.5.0    ---
+entire                                            0.5.11-0.175.2.13.0.6.0    ---
+entire                                            0.5.11-0.175.2.12.0.6.0    i--
+entire                                            0.5.11-0.175.2.12.0.5.0    ---
+entire                                            0.5.11-0.175.2.11.0.5.0    ---
+entire                                            0.5.11-0.175.2.10.0.5.0    ---
+entire                                            0.5.11-0.175.2.9.0.5.0     ---</code></pre>
+
+<p>Suppose we decided to install version <code>11.2.11</code>. Take a note of the
+version string: <code>0.5.11-0.175.2.11.0.5.0</code> -- you will need it when
+editing the manifest. Now start your favorite text editor and open the
+manifest file:</p>
+<pre class="codehilite"><code class="language-console linenums">root@solarislab:~# vi s11.2.11-manifest.xml</code></pre>
+
+<p>Scroll to almost the end of the file and find the following lines:</p>
+<pre>
+        For instance, to specify a particular build of S11.2, the
+        following should be used:
+
+            &lt;name&gt;pkg:/entire@0.5.11,5.11-0.175.2.0.0.build&lt;/name&gt;
+      --&gt;
+      &lt;software_data action=&quot;install&quot;&gt;
+        &lt;name&gt;pkg:/entire@0.5.11-0.175.2&lt;/name&gt;
+        &lt;name&gt;pkg:/group/system/solaris-large-server&lt;/name&gt;
+      &lt;/software_data&gt;
+</pre>
+
+<p>Change them to tell AI server that you want that specific SRU of
+Solaris. Also we can change the default 'solaris-large-server' group to
+'solaris-small-server' one. After editing it should look like this
+(changes are in <strong>bold</strong>):</p>
+<pre>
+        For instance, to specify a particular build of S11.2, the
+        following should be used:
+
+            &lt;name&gt;pkg:/entire@0.5.11,5.11-0.175.2.0.0.build&lt;/name&gt;
+      --&gt;
+      &lt;software_data action=&quot;install&quot;&gt;
+        &lt;name&gt;pkg:/entire@0.5.11-0.175.2<strong>.11.0.5.0</strong>&lt;/name&gt;
+        &lt;name&gt;pkg:/group/system/solaris-<strong>small</strong>-server&lt;/name&gt;
+      &lt;/software_data&gt;
+</pre>
+
+<p>Now we have to install this manifest in the default SPARC service.</p>
+<pre class="codehilite"><code class="language-console linenums">root@solarislab:~# installadm create-manifest -n default-sparc -m s11.2.11 -f ./s11.2.11-manifest.xml
+Created Manifest: 's11.2.11'
+root@solarislab:~# installadm list -m
+Service Name             Manifest Name Type    Status   Criteria
+------------             ------------- ----    ------   --------
+default-sparc            orig_default  derived default  none
+                         s11.2.11      derived inactive none
+solaris11_2_11_5_0-sparc orig_default  derived default  none
+solaris11_3-sparc        orig_default  derived default  none</code></pre>
+
+<p>OK, we have amended the manifest and installed it onto the server, but
+how can we use it? How can we let the install server know that which
+manifest to use? Well, we can specify a set of criteria to decide which
+manifest to apply. We can include IP address, hostname, MAC address in
+this criteria and the install server will use certain manifests for
+different clients. If the client doesn't fit any criteria, then the
+default manifest is applied. Let's define such criteria for our client.</p>
+<p>If you remember, before booting the client from OpenBoot prompt we
+assigned several boot parameters to it: IP address, hostname, wanboot
+script location, etc. So now we can use, for example, its hostname
+<code>ai-client</code> as a criteria.</p>
+<pre class="codehilite"><code class="language-console linenums">root@solarislab:~# installadm set-criteria -n default-sparc -m s11.2.11 -c hostname=ai-client
+Changed Manifest: 's11.2.11'
+root@solarislab:~# installadm list -m
+Service Name             Manifest Name Type    Status  Criteria
+------------             ------------- ----    ------  --------
+default-sparc            s11.2.11      derived active  hostname = ai-client
+                         orig_default  derived default none
+solaris11_2_11_5_0-sparc orig_default  derived default none
+solaris11_3-sparc        orig_default  derived default none</code></pre>
+
+<p>And now we can try to install the client. Login to the console with
+<code>telnet localhost 5000</code> (using the port number provided by your
+instructor) and repeat the installation process described above.</p>
+<p>After you passed all the installation and configuration steps, login
+into the client and check it's version:</p>
+<pre class="codehilite"><code class="language-console linenums">root@ai-client:~# pkg list entire
+NAME (PUBLISHER)                                  VERSION                    IFO
+entire                                            0.5.11-0.175.2.11.0.5.0    i--</code></pre>
+
+<p>Success! Let's explain what we have observed here.</p>
+<ol>
+<li>By default install service is always created from the latest
+    available version of Solaris</li>
+<li>For each Solaris Update (i.e. <code>11.1</code>, <code>11.2</code>, <code>11.3</code>) we need a separate
+    install service</li>
+<li>By default install service installs the latest available SRU for the
+    Solaris Update this service is created for (in our case the service
+    created from Solaris <code>11.2.11</code> will install <code>11.2.14</code> unless we
+    specify otherwise)</li>
+<li>To specify a particular SRU which you want to install you have to
+    edit and install AI manifest into the install service</li>
+</ol>
+<p>Now we will learn how to customize installation process even further. We
+start with adding other software packages.</p>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../ai_simple/index.html" title="Simple Installation" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Simple Installation
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../ai_packages/index.html" title="Different Set of Packages" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Different Set of Packages
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Oracle Corp., 2011-2017
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application-3964c0cb56.js"></script>
+      <script>app.initialize({url:{base:"../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>
