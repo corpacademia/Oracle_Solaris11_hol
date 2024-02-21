@@ -936,28 +936,15 @@ based on real life use cases. We will:</p>
     zones and kernel zones: <a href="kz/kz/index.html">Kernel Zones Lab</a> </li>
 </ul>
 <h2 id="prerequisites">Prerequisites</h2>
-<p>This lab requires access to an Oracle Solaris 11 system either natively or in a
-VirtualBox virtual machine.</p>
+<p>This lab requires access corpacademia Virtial Lab environment. Please get the Access details from your Instructor.</p>
 <h3 id="using-virtual-box-vm">Using Virtual Box VM</h3>
 <p>If you're performing this lab on your laptop or desktop, we've provided
 a VirtualBox appliance that contains all the software and configuration
-necessary to complete this lab. All you need is VirtualBox software and
-a modern (with a CPU supporting virtualization turned on, AMD-V or VT-x)
-laptop/desktop with at least 3 GB of RAM and 10GB of free disk space.</p>
-<ul>
-<li>Download and install the latest version of VirtualBox for your
-    platform (<a href="http://www.virtualbox.org/wiki/Downloads">http://www.virtualbox.org/wiki/Downloads</a>).</li>
-<li>Download and install the latest version of VirtualBox Extensions
-    Pack (<a href="http://www.virtualbox.org/wiki/Downloads">http://www.virtualbox.org/wiki/Downloads</a>).</li>
-<li>Download or find on the provided DVD/USB and import the Hands On Lab
-    machine into VirtualBox (File &gt; Import Appliance). You will have
-    to accept the OTN Oracle Solaris license to use the appliance.</li>
-</ul>
+necessary to complete this lab.</p>
+
 <h2 id="the-environment">The Environment</h2>
 <p>In this lab we are going to use Oracle Solaris 11 virtual appliance in
-Oracle VirtualBox environment. If you are using lab machines, the
-appliance is already installed. You can also download the appliance from
-Oracle Technology Network: (<a href="http://www.oracle.com/technetwork/server-storage/solaris11/downloads/vm-templates-2245495.html">http://www.oracle.com/technetwork/server-storage/solaris11/downloads/vm-templates-2245495.html</a>)</p>
+Oracle VirtualBox environment.</p> 
 <p>By default, VirtualBox assigns the IP address <code>10.0.2.15</code> to the Solaris
 global zone. We will be using also IP addresses <code>10.0.2.21</code> and <code>10.0.2.22</code>
 for local zones. As we are using VirtualBox in NAT (network address
@@ -991,27 +978,7 @@ this appliance with open network access, you will need to change the
 repository address to Oracle's standard Solaris repository.</p>
 <pre class="codehilite"><code class="language-console linenums">root@solaris:~# pkg set-publisher -G '*' -M '*' -g http://pkg.oracle.com/solaris/release -P solaris </code></pre>
 
-<h2 id="further-oracle-solaris-education">Further Oracle Solaris Education</h2>
-<p>This Hands-on Lab is just and introduction in Oracle Solaris 11 world.
-We highly recommend to continue your education with Oracle University.
-There is a full set of new courses covering Oracle Solaris 11:</p>
-<ul>
-<li>Transition to Oracle Solaris 11</li>
-<li>What's New in Oracle Solaris 11</li>
-<li>What's New in Oracle Solaris 11 (Self-Study)</li>
-<li>Oracle Solaris 11 System Administration</li>
-<li>Oracle Solaris 11 Advanced System Administration</li>
-</ul>
-<p>Get more details at the Oracle University page:
-<a href="http://bit.ly/OracleSolaris11Edu">http://bit.ly/OracleSolaris11Edu</a> .</p>
-<p>If you prefer to study Oracle Solaris 11 on your own, there are a lot of books
-available: <a href="https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&amp;field-keywords=oracle+solaris+11">Oracle Solaris 11 books on Amazon</a></p>
-<p>Don't miss Oracle Solaris channel on YouTube: <a href="https://www.youtube.com/OracleSolaris">https://www.youtube.com/OracleSolaris</a> and especially the screencasts of most of the labs in this course:</p>
-<ul>
-<li><a href="https://www.youtube.com/playlist?list=PLrEMJQQgYLXhZ9-Qfc2tOVl1xNccg-Fvh">Season 1: The Basics</a></li>
-<li><a href="https://www.youtube.com/playlist?list=PLrEMJQQgYLXi9BJb0zd2hU63EP4qHqiQl">Season 2: Cloud in a Box</a></li>
-<li><a href="https://www.youtube.com/playlist?list=PLrEMJQQgYLXgyH6YC-OVIhnTIwwkaPpRP">Season 3: Tips and Tricks</a></li>
-</ul>
+
                 
                   
                 
