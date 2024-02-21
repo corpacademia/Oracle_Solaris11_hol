@@ -1,6 +1,6 @@
 site_name: Oracle Solaris 11 Hands-on Labs
-site_author: Pavel Anni <pavel.anni@oracle.com>
-copyright: Oracle Corp., 2011-2017
+site_author: Priyaraj <priyaraj@corpacademia.com>
+copyright: CorpAcademia iTechovations Pvt. Ltd. 2024
 
 # To be able to read it without a web server
 use_directory_urls: false
