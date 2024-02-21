@@ -23,32 +23,15 @@ based on real life use cases. We will:
 Prerequisites
 -------------
 
-This lab requires access to an Oracle Solaris 11 system either natively or in a
-VirtualBox virtual machine.
+This lab requires access corpacademia Virtial Lab environment. Please get the Access details from your Instructor
 
-### Using Virtual Box VM
-
-If you're performing this lab on your laptop or desktop, we've provided
-a VirtualBox appliance that contains all the software and configuration
-necessary to complete this lab. All you need is VirtualBox software and
-a modern (with a CPU supporting virtualization turned on, AMD-V or VT-x)
-laptop/desktop with at least 3 GB of RAM and 10GB of free disk space.
-
--   Download and install the latest version of VirtualBox for your
-    platform (http://www.virtualbox.org/wiki/Downloads).
--   Download and install the latest version of VirtualBox Extensions
-    Pack (http://www.virtualbox.org/wiki/Downloads).
--   Download or find on the provided DVD/USB and import the Hands On Lab
-    machine into VirtualBox (File &gt; Import Appliance). You will have
-    to accept the OTN Oracle Solaris license to use the appliance.
     
 The Environment
 ---------------
 
 In this lab we are going to use Oracle Solaris 11 virtual appliance in
 Oracle VirtualBox environment. If you are using lab machines, the
-appliance is already installed. You can also download the appliance from
-Oracle Technology Network: (http://www.oracle.com/technetwork/server-storage/solaris11/downloads/vm-templates-2245495.html)
+appliance is already installed. 
 
 By default, VirtualBox assigns the IP address `10.0.2.15` to the Solaris
 global zone. We will be using also IP addresses `10.0.2.21` and `10.0.2.22`
@@ -99,28 +82,4 @@ repository address to Oracle's standard Solaris repository.
 root@solaris:~# pkg set-publisher -G '*' -M '*' -g http://pkg.oracle.com/solaris/release -P solaris 
 ```
 
-Further Oracle Solaris Education
---------------------------------
-
-This Hands-on Lab is just and introduction in Oracle Solaris 11 world.
-We highly recommend to continue your education with Oracle University.
-There is a full set of new courses covering Oracle Solaris 11:
-
--   Transition to Oracle Solaris 11
--   What's New in Oracle Solaris 11
--   What's New in Oracle Solaris 11 (Self-Study)
--   Oracle Solaris 11 System Administration
--   Oracle Solaris 11 Advanced System Administration
-
-Get more details at the Oracle University page:
-<http://bit.ly/OracleSolaris11Edu> .
-
-If you prefer to study Oracle Solaris 11 on your own, there are a lot of books
-available: [Oracle Solaris 11 books on Amazon](https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=oracle+solaris+11)
-
-Don't miss Oracle Solaris channel on YouTube: https://www.youtube.com/OracleSolaris and especially the screencasts of most of the labs in this course:
-
-- [Season 1: The Basics](https://www.youtube.com/playlist?list=PLrEMJQQgYLXhZ9-Qfc2tOVl1xNccg-Fvh)
-- [Season 2: Cloud in a Box](https://www.youtube.com/playlist?list=PLrEMJQQgYLXi9BJb0zd2hU63EP4qHqiQl)
-- [Season 3: Tips and Tricks](https://www.youtube.com/playlist?list=PLrEMJQQgYLXgyH6YC-OVIhnTIwwkaPpRP)
 
